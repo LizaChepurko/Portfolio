@@ -74,6 +74,11 @@
       <span class="block">Chepurko</span>
     </a>
 
+        <button id="menuBtn" class="md:hidden p-2 rounded outline-none" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="sr-only">פתח תפריט</span>
+        <svg width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
     <nav class="flex items-center gap-8 text-sm">
       <a href="#about"    class="hover:opacity-80">about</a>
       <a href="#projects" class="hover:opacity-80">projects</a>
@@ -81,7 +86,19 @@
       <a href="#arts"     class="hover:opacity-80">arts</a>
     </nav>
   </div>
+
+  <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-white/80 dark:bg-slate-900/80 backdrop-blur">
+    <ul class="px-4 py-3 space-y-2">
+      <li><a href="#about" class="block py-2">about</a></li>
+      <li><a href="#projects" class="block py-2">Game projects</a></li>
+      <li><a href="#gamedev" class="block py-2">Game Dev</a></li>
+      <a href="#arts"     class="block py-2">arts</a>
+    </ul>
+  </div>
 </header>
+
+
+<div class="h-14"></div>
 
 <!-- HERO -->
 <section id="about" class="relative overflow-hidden">
