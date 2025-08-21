@@ -177,28 +177,26 @@
           <ul class="flex items-center gap-4 lg:gap-6 px-3 text-sm lg:text-base">
             <li><a class="hover:underline transition-all" href="#about">about</a></li>
             <li><a class="hover:underline transition-all" href="#projects">projects</a></li>
-            <li><a class="hover:underline transition-all" href="#gamedev">Game Dev</a></li>
+            <li><a class="hover:underline transition-all" href="#gamedev">game Dev</a></li>
             <li><a class="hover:underline transition-all" href="#arts">arts</a></li>
           </ul>
         </nav>
 
         <!-- כפתור המבורגר מותאם -->
-    <button id="menuBtn" class="md:hidden p-3" aria-expanded="false" aria-controls="mobileMenu">
-      <span class="sr-only">menu</span>
-      <span class="hamburger" aria-hidden="true">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </span>
-    </button>
-
+        <button id="menuBtn" class="md:hidden p-3 hamburger" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="sr-only">menu</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
 
       <!-- תפריט נייד מותאם -->
       <div id="mobileMenu" class="md:hidden mobile-menu bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-b-xl mt-1 border border-white/20 border-t-0">
         <nav class="px-4 py-2">
           <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#about">about</a>
           <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#projects">projects</a>
-          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#gamedev">Game Dev</a>
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#gamedev">game dev</a>
           <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#arts">arts</a>
         </nav>
       </div>
@@ -334,7 +332,7 @@
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-2xl sm:text-3xl font-bold text-center">Projects</h2>
 
-    <div class="mt-8 grid gap-8 sm:grid-cols-4 items-stretch">
+    <ul class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
       <!-- 1) OOP – Chess game -->
       <a href="https://github.com/LizaChepurko/OOP1" target="_blank" rel="noopener"
         class="block w-full max-w-[320px]">
@@ -560,8 +558,6 @@
     <h2 class="text-center font-bold text-xl text-white sm:text-2xl md:text-3xl mb-8">✨ Art Gallery ✨ </h2>
 
     <ul class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-
-
       <!-- כרטיסייה 1 -->
       <li>
         <a href="assets/flyingpenguine_cr.jpg" target="_blank" rel="noopener"
