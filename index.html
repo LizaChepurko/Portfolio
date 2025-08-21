@@ -174,17 +174,15 @@
 <body class="font-mono min-h-screen bg-[linear-gradient(180deg,#FFF8F8_0%,#B7BCFF_20%,#DF6BFF_40%,#700C8B_60%)] text-slate-900 dark:text-slate-100">
   
   <!-- רקע עם כדורים -->
-  <div class="fixed inset-0 -z-10">
     <div class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
     <div class="absolute top-1/3 -right-24 w-[36rem] h-[36rem] rounded-full bg-purple-400/70 blur-[90px] animate-[floaty_26s_ease-in-out_infinite_alternate]"></div>
     <div class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
-  </div>
 
   <!-- Header מותאם למובייל -->
   <header id="siteHeader" class="fixed top-0 inset-x-0 z-50" dir="ltr">
     <div class="mx-auto max-w-6xl px-3 sm:px-4">
       <div class="mt-2 sm:mt-1 h-12 sm:h-14 flex items-center justify-between rounded-xl sm:rounded-2xl
-                  border border-white/20 bg-white/10 dark:bg-slate-900/40
+                  border /20 bg-white/10 dark:bg-slate-900/40
                   backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)]">
 
         <!-- שם -->
@@ -706,6 +704,58 @@
     </p>
   </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const html = document.documentElement, body = document.body;
+
+    function openMenu() {
+      mobileMenu.classList.add('open');      // פותח את התפריט (עובד עם .mobile-menu{max-height:...})
+      menuBtn.classList.add('active');       // הופך את אייקון ההמבורגר ל-X (יש לך CSS לזה)
+      menuBtn.setAttribute('aria-expanded', 'true');
+      html.classList.add('overflow-hidden'); // נועל גלילה מאחורי התפריט
+      body.classList.add('overflow-hidden');
+    }
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      menuBtn.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      html.classList.remove('overflow-hidden');
+      body.classList.remove('overflow-hidden');
+    }
+    function toggleMenu() {
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+    }
+
+    // פתיחה/סגירה בלחיצה על הכפתור
+    menuBtn?.addEventListener('click', toggleMenu);
+    // תמיכה טובה למובייל (למנוע דאבל-טריגר)
+    menuBtn?.addEventListener('touchend', (e) => { e.preventDefault(); toggleMenu(); }, { passive:false });
+
+    // סגירה בלחיצה על קישור בתוך התפריט
+    mobileMenu.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if (a) closeMenu();
+    });
+
+    // סגירה בלחיצה מחוץ לתפריט
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
+    });
+
+    // ESC סוגר
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+    // אם עוברים למסך רחב (>= md) – סוגרים אוטומטית
+    const mql = window.matchMedia('(min-width: 768px)');
+    (mql.addEventListener || mql.addListener).call(mql, 'change' in mql ? 'change' : (cb => mql.addListener(cb)), (e) => {
+      if (e.matches) closeMenu();
+    });
+  });
+</script>
+
 
 </body>
 </html>
