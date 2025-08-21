@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liza Chepurko - Protfolio</title>
+  <meta name="description" content="קורות חיים ופרויקטים – מדעי המחשב, פיתוח משחקים ותוכן יצירתי." />
+  <meta property="og:title" content=" Liza Chepurko - Protfolio " />
+  <meta property="og:description" content="קורות חיים ופרויקטים – מדעי המחשב, פיתוח משחקים ותוכן יצירתי." />
+  <meta property="og:type" content="website" />
+  <meta name="color-scheme" content="light dark">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Mono for the whole site + Pixel for the yellow headings -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+Mono:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config: map font-mono to our fonts
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"JetBrains Mono"','"Noto Sans Mono"','ui-monospace','SFMono-Regular','Menlo','Consolas','"Liberation Mono"','monospace'],
+            pixel: ['"Press Start 2P"','cursive']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Global helpers -->
+  <style>
+    /* Pixel headings keep their font */
+    .pixel{
+      font-family: "Press Start 2P", cursive;
+      letter-spacing: .02em;
+    }
+    /* Code blocks: keep mono + LTR so סימנים לא יתהפכו */
+    pre, code, kbd, samp, .code {
+      font-family: "JetBrains Mono","Noto Sans Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+      font-variant-ligatures: contextual common-ligatures;
+      direction: ltr;
+    }
+    /* Nice mask for hero gradient */
+    .radial-mask { mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%); }
+    /* Offset for sticky header when jumping to anchors */
+    section[id]{ scroll-margin-top: 96px; }
+    /* Floaty animation */
+    @keyframes floaty {
+      0% { transform: translate3d(0,0,0) scale(1); }
+      100% { transform: translate3d(0,-10px,0) scale(1.03); }
+    }
+  </style>
+</head>
+
+<body class="font-mono min-h-screen bg-[linear-gradient(180deg,#FFF8F8_0%,#B7BCFF_20%,#DF6BFF_40%,#700C8B_60%)]">
+  <!-- Global gradient + blobs background -->
+  <div class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
+  <div class="absolute top-1/3 -right-24 w-[36rem] h-[36rem] rounded-full bg-purple-400/70 blur-[90px] animate-[floaty_26s_ease-in-out_infinite_alternate]"></div>
+  <div class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
+
+  <!-- Header -->
+<header dir="ltr"
+  class="sticky top-0 z-50 w-full backdrop-blur-md bg-black/10 dark:bg-slate-950/10 bg-slate-325/70 shadow-xl /10">
+  <div class="w-full px-3 sm:px-4 lg:px-6 h-20 flex items-center justify-between">
+
+    <a href="#top" class="leading-tight font-semibold text-[18px] tracking-tight -ml-1 sm:-ml-1">
+      <span class="block">Liza</span>
+      <span class="block">Chepurko</span>
+    </a>
+
+    <nav class="flex items-center gap-8 text-sm">
+      <a href="#about"    class="hover:opacity-80">about</a>
+      <a href="#projects" class="hover:opacity-80">projects</a>
+      <a href="#gamedev"  class="hover:opacity-80">Game Dev</a>
+      <a href="#arts"     class="hover:opacity-80">arts</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="about" class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 py-16 sm:py-24 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
+
+    <div class="order-2 md:order-1">
+      <h1 class="text-3xl sm:text-5xl font-bold leading-tight">About Me</h1>
+      <p class="mt-6 text-slate-800 dark:text-slate-300">
+        A third year student of Computer Science. Quick learner with analytical and problem solving skills.
+        Passionate about building meaningful software. Currently volunteering as a game developer on an
+        educational project for diabetic patients, using gamification to promote health awareness.
+      </p>
+      <p class="mt-6 text-slate-800 font-bold dark:text-slate-300">
+        LANGUAGES: Hebrew, English, Russian
+      </p>
+            <!-- אייקונים (ללא עיגולים) -->
+      <div class="mt-16 flex items-center gap-8">
+        <a href="https://github.com/LizaChepurko" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center hover:opacity-100 opacity-80 transition" aria-label="GitHub">
+          <img src="assets/6214715_github_logo_icon.svg" alt="GitHub" class="w-7 h-7">
+        </a>
+
+        <a href="https://www.linkedin.com/in/liza-chepurko-b69b99302/" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center hover:opacity-100 opacity-80 transition" aria-label="LinkedIn">
+          <img src="assets/6214710_linkedin_logo_icon.svg" alt="LinkedIn" class="w-7 h-7">
+        </a>
+
+        <a href="mailto:lizachep@gmail.com"
+           class="inline-flex items-center gap-2 hover:opacity-100 opacity-80 transition" aria-label="Email">
+          <img src="assets/6214722_email_envelope_gmail_letter_logo_icon.svg" alt="" class="w-7 h-7">
+          <span class="text-sm">lizachep@gmail.com</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ימין: עיגול + אייקונים -->
+    <div class="order-1 md:order-2 flex flex-col items-center md:items-end gap-4">
+      <!-- עיגול (תמונת פרופיל אופציונלית) -->
+      <div class="w-60 h-60 md:w-60md:h-60 rounded-full overflow-hidden bg-slate-300/70 shadow-2xl">
+        <!-- אם יש תמונה: -->
+        <!-- <img src="assets/img/profile.jpg" alt="Liza Chepurko" class="w-full h-full object-cover"> -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="py-24">
+  <div class="max-w-3xl mx-auto px-4" dir="ltr">
+    <h2 class="text-3xl font-bold text-center">Education</h2>
+
+    <dl class="mt-8 grid grid-cols-[130px_1fr] md:grid-cols-[160px_1fr] gap-x-8 gap-y-8">
+      <!-- שורה 1 -->
+      <dt class="text-amber-700 font-semibold text-lg md:text-xl">2015–2018</dt>
+      <dd class="text-slate-900 dark:text-slate-300 leading-relaxed">
+        <p class="font-medium">“Yitzhak Shamir” High School. Graduated with excellence.</p>
+        <p class="font-medium">
+          Bagrut certificate: Majoring Biology and Social Science.
+          5 units of English and Mathematics.
+        </p>
+      </dd>
+
+      <!-- שורה 2 -->
+      <dt class="text-amber-700 font-semibold text-lg md:text-xl">2022–2025</dt>
+      <dd class="text-slate-900 dark:text-slate-300 leading-relaxed">
+        <p class="font-medium">Third year B.Sc student of Computer Science,</p>
+        <p class="font-medium">Ariel University</p>
+      </dd>
+    </dl>
+  </div>
+</section>
+
+<!-- Key Courses -->
+<section id="courses" class="py-16">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center">Key Courses</h2>
+
+    <div class="mt-8 space-y-5">
+      <!-- שורה 1 -->
+      <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
+        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition">Object Oriented</span></li>
+        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition">Data Structures</span></li>
+        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition">DataBases</span></li>
+        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition">Software engineering</span></li>
+        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition">Communication and networking</span></li>
+      </ul>
+
+      <!-- שורה 2 -->
+      <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
+        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition">Operating systems</span></li>
+        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition">Game Development</span></li>
+        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition">Space Engineering</span></li>
+        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition">Topics in Computer Vision</span></li>
+      </ul>
+
+      <!-- שורה 3 -->
+      <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
+        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition">Computer Architecture</span></li>
+        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition">++C</span></li>
+        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-0.5 transition">Data compression</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Programming Skills and Tools -->
+<section id="skills-tools" class="relative overflow-hidden py-16" dir="ltr">
+
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider uppercase">
+      Programming Skills and Tools
+    </h2>
+
+    <p class="mt-10 md:mt-20 text-lg leading-8 text-center">
+      Java, Python, Linux (Ubuntu OS), Git, PyTorch, Wireshark, C, C#, C++, SQL &amp; MongoDB,
+      Unity, ChatGPT and Android Studio
+    </p>
+  </div>
+</section>
+
+<!-- Chosen Projects -->
+<section id="projects" class="py-16" dir="ltr">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl sm:text-3xl font-bold text-center">Projects</h2>
+
+    <div class="mt-8 grid gap-8 sm:grid-cols-4 items-stretch">
+      <!-- 1) OOP – Chess game -->
+      <a href="https://github.com/LizaChepurko/OOP1" target="_blank" rel="noopener"
+        class="block w-full max-w-[320px]">
+         <article class="h-full rounded-2xl border p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+            <img src="assets/Screenshot 2025-08-20 163037.png" loading="lazy" alt="Artwork 1">
+          </div>
+          <h3 class="mt-3 text-center text-sm">Oop - Viking Chess</h3>
+        </article>
+      </a>
+
+      <!-- 2) Operating systems -->
+      <a href="https://github.com/LizaChepurko/Operating_Systems_FinalProject/blob/main/README.pdf" target="_blank" rel="noopener"
+        class="block w-full max-w-[320px]">
+         <article class="h-full rounded-2xl border p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+            <img src="assets/Screenshot 2025-08-20 164236.png" loading="lazy" alt="Artwork 1">
+          </div>
+          <h3 class="mt-3 text-center text-sm">Operating Systems - MST solver server</h3>
+        </article>
+      </a>
+
+      <!-- 3) Catan -->
+      <a href="https://github.com/LizaChepurko/Catan/blob/main/README%20.pdf" target="_blank" rel="noopener"
+        class="block w-full max-w-[320px]">
+         <article class="h-full rounded-2xl border p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+            <img src="assets/Screenshot 2025-08-20 143257.png" loading="lazy" alt="Artwork 1">
+          </div>
+          <h3 class="mt-3 text-center text-sm">Catan C++</h3>
+        </article>
+      </a>
+
+      <!-- 4) Volunteering app -->
+      <a href="https://github.com/AidLink-app/AidLink-Volunteering-app" target="_blank" rel="noopener"
+        class="block w-full max-w-[320px]">
+         <article class="h-full rounded-2xl border p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+            <video 
+              class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" 
+              autoplay 
+              loop 
+              muted 
+              playsinline
+            >
+            <source src="assets/WhatsApp Video 2025-08-20 at 14.13.56.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h3 class="mt-3 text-center text-sm">Valunteering app</h3>
+        </article>
+      </a>
+
+            <!-- 5) Space engineering final project -->
+      <a href="https://github.com/LizaChepurko/Target-tracker" target="_blank" rel="noopener"
+        class="block w-full max-w-[320px]">
+         <article class="h-full rounded-2xl border p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+            <video 
+              class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" 
+              autoplay 
+              loop 
+              muted 
+              playsinline
+            >
+            <source src="assets/457015830-8916909f-8696-48e9-b0c6-2cf88fb790ca.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h3 class="mt-3 text-center text-sm">Space engineering final project</h3>
+        </article>
+      </a>
+
+       <article class="h-full rounded-2xl border p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+        <h3 class="font-semibold mb-3">See More Projects</h3>
+        <ul class="list-disc pl-5 space-y-1 text-sm">
+          <li>
+            <a class="underline underline-offset-4 hover:opacity-40" 
+              href="https://github.com/LizaChepurko/Assignment2" 
+              target="_blank">
+              Projects in C
+            </a>
+          </li>
+          <li>
+            <a class="underline underline-offset-4 hover:opacity-40" 
+              href="https://github.com/LizaChepurko/N-Ary-Tree-Iterators" 
+              target="_blank">
+              More projects in C++
+            </a>
+          </li>
+          <li>
+            <a class="underline underline-offset-4 hover:opacity-40" 
+              href="https://github.com/LizaChepurko/OOP2" 
+              target="_blank">
+              OOP small network
+            </a>
+          </li>
+          <li>
+            <a class="underline underline-offset-4 hover:opacity-40" 
+              href="files/פרויקט סיום רשתות תקשורת 2024.pdf" 
+              download="Network-Protocol-Design.pdf">
+              Network protocol design
+            </a>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  .pixel { font-family: "Press Start 2P", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+</style>
+
+<!-- Game Development -->
+<section id="gamedev" class="py-16" dir="ltr">
+  <!-- קונטיינר צר יותר כדי שהעמודות יתקרבו -->
+  <div class="max-w-5xl mx-auto px-4">
+    <!-- כותרת בפונט פיקסל + ריווח למטה -->
+    <h2 class="pixel text-xl sm:text-2xl md:text-3xl text-center tracking-wide mb-8">
+      Game Development
+    </h2>
+
+    <!-- שתי עמודות סימטריות, ממורכזות -->
+    <div class="grid md:grid-cols-2 gap-x-6 gap-y-10 items-start justify-items-center">
+      <!-- עמודה שמאל -->
+      <div class="space-y-5">
+      <a href="https://lizachep.itch.io/final-game-house" target="_blank" rel="noopener"
+        class="block w-full max-w-[320px]">
+        <article class="rounded-2xl border p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+            <video 
+              class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" 
+              autoplay 
+              loop 
+              muted 
+              playsinline
+            >
+              <source src="assets/Untitled video - Made with Clipchamp (1).mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h3 class="mt-3 text-center text-lg font-semibold">Ready, Set, Go!</h3>
+          <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed">
+            One of the winners in an inner contest. The game was created specifically for adults with intellectual disabilities and challenges with organization and planning, and promotes independence. The game was developed in collaboration with the Department of Occupational Therapy.
+          </p>
+        </article>
+      </a>
+      <a href="https://lizachep.itch.io/multimotek" target="_blank" rel="noopener"
+        class="block w-full max-w-[320px]">
+        <article class="rounded-2xl border p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+            <video 
+            class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" 
+            autoplay 
+            loop 
+            muted 
+            playsinline
+          >
+            <source src="assets/Multimotek.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          </div>
+          <h3 class="mt-3 text-center text-lg font-semibold">Multimotek</h3>
+          <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed">
+            A volunteer project that I am doing in collaboration with an association for diabetics in Israel
+          </p>
+        </article>
+      </a>
+      </div>
+      <div class="space-y-5 flex flex-col items-center self-start">
+      <a href="https://github.com/Liza-Gaming/Jenga_tower" target="_blank" rel="noopener"
+        class="block w-full max-w-[320px]">
+        <article class="rounded-2xl border p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+            <video 
+            class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" 
+            autoplay 
+            loop 
+            muted 
+            playsinline
+          >
+            <source src="assets/Jenga.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          </div>
+          <h3 class="mt-3 text-center text-lg font-semibold">Jenga Tower</h3>
+          <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed">
+            Jenga Tower is a Unity multiplayer mobile 3D game that I designed and built on my own. I started this project as a creative outlet
+          </p>
+        </article>
+        </a>
+        <div class="w-full max-w-[320px] text-center">
+          <p class="text-lg sm:text-xl md:text-1xl text-white text-center leading-relaxed"> For all my games you can visit my
+          <a
+            href="https://github.com/orgs/Liza-Gaming/repositories"
+            target="_blank" rel="noopener"
+            class="inline-flex flex-col items-center gap-3 text-white font-medium underline decoration-white/60 hover:decoration-white"
+          >
+            <span>Organization</span>
+            <img
+              src="assets/Drawing 16 (1).png"
+              alt="Liza Chepurko"
+              class="block w-60 h-auto mx-auto rounded-xl shadow-sm"
+            />
+          </a>
+          </p>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pixel { color: #ffc927; }
+  .dark .pixel { color: #FBBF24; }
+</style>
+
+<!-- Arts -->
+<section id="arts" class="relative py-16" dir="ltr">
+
+  <div class="max-w-5xl mx-auto px-5">
+    <h2 class="text-center font-bold text-xl text-white sm:text-2xl md:text-3xl mb-8">✨ Art Gallery ✨ </h2>
+
+    <ul class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- כרטיסייה 1 -->
+      <li>
+        <a href="assets/flyingpenguine_cr.jpg" target="_blank" rel="noopener"
+           class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+          <div class="relative aspect-square overflow-hidden">
+            <img src="assets/flyingpenguine_cr.jpg" loading="lazy" alt="Artwork 1"
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+          </div>
+        </a>
+      </li>
+
+      <!-- כרטיסייה 2 -->
+      <li>
+        <a href="assets/cupcake.jpg" target="_blank" rel="noopener"
+           class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+          <div class="relative aspect-square overflow-hidden">
+            <img src="assets/cupcake.jpg" loading="lazy" alt="Artwork 2"
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+          </div>
+        </a>
+      </li>
+
+      <!-- כרטיסייה 3 -->
+      <li>
+        <a href="assets/fish.jpg" target="_blank" rel="noopener"
+           class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+          <div class="relative aspect-square overflow-hidden">
+            <img src="assets/fish.jpg" loading="lazy" alt="Artwork 3"
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+          </div>
+        </a>
+      </li>
+
+      <!-- כרטיסיות נוספות... פשוט שכפלי והחליפי את הנתיב וה-alt -->
+      <li>
+        <a href="assets/osprey.jpg" target="_blank" rel="noopener" class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+          <div class="relative aspect-square overflow-hidden">
+            <img src="assets/osprey.jpg" loading="lazy" alt="Artwork 4"
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="assets/nightjarandwryneck.jpg" target="_blank" rel="noopener" class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+          <div class="relative aspect-square overflow-hidden">
+            <img src="assets/nightjarandwryneck.jpg" loading="lazy" alt="Artwork 5"
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="assets/bluepenpelican_cr.jpg" target="_blank" rel="noopener" class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+          <div class="relative aspect-square overflow-hidden">
+            <img src="assets/bluepenpelican_cr.jpg" loading="lazy" alt="Artwork 6"
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="assets/pug.jpg" target="_blank" rel="noopener" class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+          <div class="relative aspect-square overflow-hidden">
+            <img src="assets/pug.jpg" loading="lazy" alt="Artwork 7"
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="assets/chicken.jpg" target="_blank" rel="noopener" class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+          <div class="relative aspect-square overflow-hidden">
+            <img src="assets/chicken.jpg" loading="lazy" alt="Artwork 8"
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="assets/drawing1.jpg" target="_blank" rel="noopener" class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+          <div class="relative aspect-square overflow-hidden">
+            <img src="assets/drawing1.jpg" loading="lazy" alt="Artwork 9"
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="assets/pinkFalcon.jpg" target="_blank" rel="noopener" class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+          <div class="relative aspect-square overflow-hidden">
+            <img src="assets/pinkFalcon.jpg" loading="lazy" alt="Artwork 10"
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="assets/WhatsApp Image 2025-08-20 at 16.59.46.jpeg" target="_blank" rel="noopener" class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+          <div class="relative aspect-square overflow-hidden">
+            <img src="assets/WhatsApp Image 2025-08-20 at 16.59.46.jpeg" loading="lazy" alt="Artwork 11"
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="assets/WhatsApp Image 2025-08-20 at 17.00.50.jpeg" target="_blank" rel="noopener" class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+          <div class="relative aspect-square overflow-hidden">
+            <img src="assets/WhatsApp Image 2025-08-20 at 17.00.50.jpeg" loading="lazy" alt="Artwork 12"
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="relative mt-16">
+  <!-- גרדיאנט הרקע -->
+  <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#B10CBF_0%,#D86AFF_45%,#BFD2FF_100%)]"></div>
+  <!-- קו/צל עדין מלמעלה -->
+  <div class="absolute inset-x-0 top-0 h-px bg-black/15 dark:bg-white/15"></div>
+
+  <!-- תוכן הפוטר -->
+  <div class="h-10 md:h-12 flex items-center justify-center">
+    <p class="text-sm text-black/80">
+       <span id="year"></span> Liza Chepurko 2025 ©
+    </p>
+  </div>
+</footer>
+
+
+  <script>
+    // Dark mode toggle
+    const themeBtn = document.getElementById('themeBtn');
+    const root = document.documentElement;
+    const stored = localStorage.getItem('theme');
+    if (stored === 'dark') root.classList.add('dark');
+    themeBtn.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth anchor scrolling with sticky-header offset
+    const headerEl = document.getElementById('siteHeader');
+    function scrollToHash(hash){
+      const el = document.querySelector(hash);
+      if(!el) return;
+      const headerH = (headerEl?.offsetHeight || 0) + 8; // small gap
+      const y = el.getBoundingClientRect().top + window.pageYOffset - headerH;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+    document.addEventListener('click', (e)=>{
+      const a = e.target.closest('a[href^="#"]');
+      if(!a) return;
+      const hash = a.getAttribute('href');
+      if(!hash || hash === '#') return;
+      const target = document.querySelector(hash);
+      if(target){
+        e.preventDefault();
+        scrollToHash(hash);
+        history.pushState(null, '', hash);
+      }
+    });
+    window.addEventListener('load', ()=>{
+      if(location.hash) setTimeout(()=>scrollToHash(location.hash), 0);
+    });
+  </script>
+</body>
+</html>
