@@ -54,7 +54,6 @@
     @keyframes floaty {
       0% { transform: translate3d(0,0,0) scale(1); }
       100% { transform: translate3d(0,-10px,0) scale(1.03); }
-       html, body { max-width: 100%; overflow-x: hidden; }
     }
   </style>
 </head>
@@ -67,7 +66,7 @@
 
   <!-- Header -->
 <header id="siteHeader" dir="ltr"
-  class="fixed top-0 inset-x-0 z-50 w-full backdrop-blur-md bg-black/10 dark:bg-slate-950/10 bg-slate-300/70 shadow-2xl">
+  class="fixed top-0 inset-x-0 z-50 w-full backdrop-blur-md bg-black/10 dark:bg-slate-950/10 bg-slate-325/70 shadow-2xl">
   <div class="w-full px-3 sm:px-4 lg:px-6 h-20 flex items-center justify-between">
 
     <a href="#top" class="leading-tight font-semibold text-[18px] tracking-tight -ml-1 sm:-ml-1">
@@ -75,28 +74,12 @@
       <span class="block">Chepurko</span>
     </a>
 
-          <!-- כפתור מובייל -->
-      <button id="menuBtn" class="md:hidden p-2 rounded" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="sr-only">Open</span>
-        <!-- אייקון המבורגר -->
-        <svg width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
-
     <nav class="flex items-center gap-8 text-sm">
       <a href="#about"    class="hover:opacity-80">about</a>
       <a href="#projects" class="hover:opacity-80">projects</a>
       <a href="#gamedev"  class="hover:opacity-80">Game Dev</a>
       <a href="#arts"     class="hover:opacity-80">arts</a>
     </nav>
-
-      <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
-    <ul class="px-4 py-3 space-y-2">
-      <li><a href="#about" class="block py-2">עליי</a></li>
-      <li><a href="#gamedev" class="block py-2">Game Dev</a></li>
-      <li><a href="#contact" class="block py-2">צור קשר</a></li>
-    </ul>
-  </div>
-
   </div>
 </header>
 
@@ -617,31 +600,5 @@ document.getElementById('year').textContent = new Date().getFullYear();
       if(location.hash) setTimeout(()=>scrollToHash(location.hash), 0);
     });
   </script>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const header = document.getElementById('siteHeader');
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    // מצב ההדר בגלילה
-    function onScroll() {
-      const scrolled = window.scrollY > 8;
-      header.classList.toggle('bg-white/10', !scrolled);
-      header.classList.toggle('bg-white/80', scrolled);
-      header.classList.toggle('shadow-sm', scrolled);
-      header.classList.add('backdrop-blur'); // blur תמיד פועל
-    }
-    onScroll();
-    document.addEventListener('scroll', onScroll, { passive: true });
-
-    // תפריט מובייל
-    menuBtn?.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-    });
-  });
-</script>
-
 </body>
 </html>
