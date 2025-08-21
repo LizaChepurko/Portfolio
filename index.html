@@ -61,57 +61,173 @@
     *, *::before, *::after { box-sizing: border-box; }
     img, video, canvas, svg { max-width: 100%; height: auto; display: block; }
   </style>
+
+    <style>
+    /* תיקונים למובייל */
+    html, body { 
+      max-width: 100vw; 
+      overflow-x: hidden; 
+    }
+    
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+    }
+    
+    img, video, canvas, svg { 
+      max-width: 100%; 
+      height: auto; 
+      display: block; 
+    }
+
+    .pixel{
+      font-family: "Press Start 2P", cursive;
+      letter-spacing: .02em;
+    }
+
+    pre, code, kbd, samp, .code {
+      font-family: "JetBrains Mono","Noto Sans Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+      font-variant-ligatures: contextual common-ligatures;
+      direction: ltr;
+    }
+
+    .radial-mask { 
+      mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%); 
+    }
+
+    section[id]{ 
+      scroll-margin-top: 80px; 
+    }
+
+    @keyframes floaty {
+      0% { transform: translate3d(0,0,0) scale(1); }
+      100% { transform: translate3d(0,-10px,0) scale(1.03); }
+    }
+
+    /* תיקון לכפתור ההמבורגר */
+    .hamburger {
+      width: 24px;
+      height: 24px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: currentColor;
+      border-radius: 1px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+    }
+
+    .hamburger span:nth-child(1) {
+      top: 4px;
+    }
+
+    .hamburger span:nth-child(2) {
+      top: 11px;
+    }
+
+    .hamburger span:nth-child(3) {
+      top: 18px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      top: 11px;
+      transform: rotate(135deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+      left: -60px;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      top: 11px;
+      transform: rotate(-135deg);
+    }
+
+    /* אנימציה לתפריט נייד */
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .mobile-menu.open {
+      max-height: 300px;
+    }
+  </style>
 </head>
 
-<body class="font-mono min-h-screen bg-[linear-gradient(180deg,#FFF8F8_0%,#B7BCFF_20%,#DF6BFF_40%,#700C8B_60%)] overflow-x-hidden text-slate-900 dark:text-slate-100">
-  <!-- Global gradient + blobs background -->
-  <div class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
+<!-- <body class="font-mono min-h-screen bg-[linear-gradient(180deg,#FFF8F8_0%,#B7BCFF_20%,#DF6BFF_40%,#700C8B_60%)] overflow-x-hidden text-slate-900 dark:text-slate-100">
+  Global gradient + blobs background -->
+  <!-- <div class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
   <div class="absolute top-1/3 -right-24 w-[36rem] h-[36rem] rounded-full bg-purple-400/70 blur-[90px] animate-[floaty_26s_ease-in-out_infinite_alternate]"></div>
-  <div class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
+  <div class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div> -->
 
   <!-- Header -->
-<header id="siteHeader" class="fixed top-0 inset-x-0 z-50">
-  <div class="mx-auto max-w-6xl px-4">
-    <!-- פס ההדר עצמו (שקוף+blur, עובד גם בספארי) -->
-    <div class="mt-2 h-14 flex items-center justify-between rounded-2xl
-                border border-white/20 bg-white/10 dark:bg-slate-900/40
-                backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)]">
-      <!-- לוגו/שם -->
-      <a href="#about" class="px-3 font-semibold">Liza</a>
+<body class="font-mono min-h-screen bg-[linear-gradient(180deg,#FFF8F8_0%,#B7BCFF_20%,#DF6BFF_40%,#700C8B_60%)] text-slate-900 dark:text-slate-100">
+  
+  <!-- רקע עם כדורים -->
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
+    <div class="absolute top-1/3 -right-24 w-[36rem] h-[36rem] rounded-full bg-purple-400/70 blur-[90px] animate-[floaty_26s_ease-in-out_infinite_alternate]"></div>
+    <div class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
+  </div>
 
-      <!-- תפריט דסקטופ -->
-      <nav class="hidden sm:block">
-        <ul class="flex items-center gap-6 px-3 text-base">
-          <li><a class="hover:underline" href="#about">about</a></li>
-          <li><a class="hover:underline" href="#projects">projects</a></li>
-          <li><a class="hover:underline" href="#gamedev">Game Dev</a></li>
-          <li><a class="hover:underline" href="#arts">arts</a></li>
-        </ul>
-      </nav>
+  <!-- Header מותאם למובייל -->
+  <header id="siteHeader" class="fixed top-0 inset-x-0 z-50" dir="ltr">
+    <div class="mx-auto max-w-6xl px-3 sm:px-4">
+      <div class="mt-2 sm:mt-1 h-12 sm:h-14 flex items-center justify-between rounded-xl sm:rounded-2xl
+                  border border-white/20 bg-white/10 dark:bg-slate-900/40
+                  backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)]">
 
-      <!-- כפתור מובייל -->
-      <button id="menuBtn" class="sm:hidden p-3" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="sr-only">menu</span>
-        <svg width="24" height="24" fill="currentColor" aria-hidden="true">
-          <path d="M3 6h18M3 12h18M3 18h18"/>
-        </svg>
-      </button>
+        <!-- שם -->
+        <a href="#about" class="px-3 sm:px-4 font-semibold text-sm sm:text-base truncate">
+          Liza Chepurko
+        </a>
+
+        <!-- תפריט דסקטופ -->
+        <nav class="hidden md:block">
+          <ul class="flex items-center gap-4 lg:gap-6 px-3 text-sm lg:text-base">
+            <li><a class="hover:underline transition-all" href="#about">about</a></li>
+            <li><a class="hover:underline transition-all" href="#projects">projects</a></li>
+            <li><a class="hover:underline transition-all" href="#gamedev">Game Dev</a></li>
+            <li><a class="hover:underline transition-all" href="#arts">arts</a></li>
+          </ul>
+        </nav>
+
+        <!-- כפתור המבורגר מותאם -->
+        <button id="menuBtn" class="md:hidden p-3 hamburger" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="sr-only">menu</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- תפריט נייד מותאם -->
+      <div id="mobileMenu" class="md:hidden mobile-menu bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-b-xl mt-1 border border-white/20 border-t-0">
+        <nav class="px-4 py-2">
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#about">about</a>
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#projects">projects</a>
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#gamedev">Game Dev</a>
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#arts">arts</a>
+        </nav>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <!-- תפריט מובייל נפתח -->
-  <div id="mobileMenu" class="sm:hidden hidden bg-white/90 dark:bg-slate-900/90 backdrop-blur border-t border-white/20">
-    <nav class="mx-auto max-w-6xl px-4 py-3">
-      <a class="block py-2" href="#about">about</a>
-      <a class="block py-2" href="#projects">projects</a>
-      <a class="block py-2" href="#gamedev">Game Dev</a>
-      <a class="block py-2" href="#arts">arts</a>
-    </nav>
-  </div>
-</header>
+  <!-- ספייסר מותאם -->
+  <div class="h-7 sm:h-7"></div>
 
 <!-- ספייסר כדי שהתוכן לא יתחבא מתחת להדר -->
-<div class="h-16 sm:h-20"></div>
+<div class="h-10 sm:h-12"></div>
 
 
 <!-- HERO -->
@@ -590,49 +706,6 @@
     </p>
   </div>
 </footer>
-
-<header id="siteHeader" class="fixed top-0 inset-x-0 z-50">
-  <div class="mx-auto max-w-6xl px-4">
-    <!-- פס ההדר עצמו (שקוף+blur, עובד גם בספארי) -->
-    <div class="mt-2 h-14 flex items-center justify-between rounded-2xl
-                border border-white/20 bg-white/10 dark:bg-slate-900/40
-                backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)]">
-      <!-- לוגו/שם -->
-      <a href="#about" class="px-3 font-semibold">Liza</a>
-
-      <!-- תפריט דסקטופ -->
-      <nav class="hidden sm:block">
-        <ul class="flex items-center gap-6 px-3 text-base">
-          <li><a class="hover:underline" href="#about">about</a></li>
-          <li><a class="hover:underline" href="#projects">projects</a></li>
-          <li><a class="hover:underline" href="#gamedev">Game Dev</a></li>
-          <li><a class="hover:underline" href="#arts">arts</a></li>
-        </ul>
-      </nav>
-
-      <!-- כפתור מובייל -->
-      <button id="menuBtn" class="sm:hidden p-3" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="sr-only">menu</span>
-        <svg width="24" height="24" fill="currentColor" aria-hidden="true">
-          <path d="M3 6h18M3 12h18M3 18h18"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- תפריט מובייל נפתח -->
-  <div id="mobileMenu" class="sm:hidden hidden bg-white/90 dark:bg-slate-900/90 backdrop-blur border-t border-white/20">
-    <nav class="mx-auto max-w-6xl px-4 py-3">
-      <a class="block py-2" href="#about">about</a>
-      <a class="block py-2" href="#projects">projects</a>
-      <a class="block py-2" href="#gamedev">Game Dev</a>
-      <a class="block py-2" href="#arts">arts</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ספייסר כדי שהתוכן לא יתחבא מתחת להדר -->
-<div class="h-16 sm:h-20"></div>
 
 </body>
 </html>
