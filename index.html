@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl" class="scroll-smooth overflow-x-hidden">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Liza Chepurko - Protfolio</title>
   <meta name="description" content="קורות חיים ופרויקטים – מדעי המחשב, פיתוח משחקים ותוכן יצירתי." />
   <meta property="og:title" content=" Liza Chepurko - Protfolio " />
@@ -56,6 +56,11 @@
       100% { transform: translate3d(0,-10px,0) scale(1.03); }
     }
   </style>
+    <style>
+    html, body { max-width: 100%; overflow-x: clip; }
+    *, *::before, *::after { box-sizing: border-box; }
+    img, video, canvas, svg { max-width: 100%; height: auto; display: block; }
+  </style>
 </head>
 
 <body class="font-mono min-h-screen bg-[linear-gradient(180deg,#FFF8F8_0%,#B7BCFF_20%,#DF6BFF_40%,#700C8B_60%)] overflow-x-hidden text-slate-900 dark:text-slate-100">
@@ -65,40 +70,49 @@
   <div class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
 
   <!-- Header -->
-<header id="siteHeader" dir="ltr"
-  class="fixed top-0 inset-x-0 z-50 w-full backdrop-blur-md bg-black/10 dark:bg-slate-950/10 bg-slate-325/70 shadow-2xl">
-  <div class="w-full px-3 sm:px-4 lg:px-6 h-20 flex items-center justify-between">
+<header id="siteHeader" class="fixed top-0 inset-x-0 z-50">
+  <div class="mx-auto max-w-6xl px-4">
+    <!-- פס ההדר עצמו (שקוף+blur, עובד גם בספארי) -->
+    <div class="mt-2 h-14 flex items-center justify-between rounded-2xl
+                border border-white/20 bg-white/10 dark:bg-slate-900/40
+                backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)]">
+      <!-- לוגו/שם -->
+      <a href="#about" class="px-3 font-semibold">Liza</a>
 
-    <a href="#top" class="leading-tight font-semibold text-[18px] tracking-tight -ml-1 sm:-ml-1">
-      <span class="block">Liza</span>
-      <span class="block">Chepurko</span>
-    </a>
+      <!-- תפריט דסקטופ -->
+      <nav class="hidden sm:block">
+        <ul class="flex items-center gap-6 px-3 text-base">
+          <li><a class="hover:underline" href="#about">about</a></li>
+          <li><a class="hover:underline" href="#projects">projects</a></li>
+          <li><a class="hover:underline" href="#gamedev">Game Dev</a></li>
+          <li><a class="hover:underline" href="#arts">arts</a></li>
+        </ul>
+      </nav>
 
-        <button id="menuBtn" class="md:hidden p-2 rounded outline-none" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="sr-only">פתח תפריט</span>
-        <svg width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <!-- כפתור מובייל -->
+      <button id="menuBtn" class="sm:hidden p-3" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="sr-only">menu</span>
+        <svg width="24" height="24" fill="currentColor" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
       </button>
-
-    <nav class="flex items-center gap-8 text-sm">
-      <a href="#about"    class="hover:opacity-80">about</a>
-      <a href="#projects" class="hover:opacity-80">projects</a>
-      <a href="#gamedev"  class="hover:opacity-80">Game Dev</a>
-      <a href="#arts"     class="hover:opacity-80">arts</a>
-    </nav>
+    </div>
   </div>
 
-  <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-white/80 dark:bg-slate-900/80 backdrop-blur">
-    <ul class="px-4 py-3 space-y-2">
-      <li><a href="#about" class="block py-2">about</a></li>
-      <li><a href="#projects" class="block py-2">Game projects</a></li>
-      <li><a href="#gamedev" class="block py-2">Game Dev</a></li>
-      <a href="#arts"     class="block py-2">arts</a>
-    </ul>
+  <!-- תפריט מובייל נפתח -->
+  <div id="mobileMenu" class="sm:hidden hidden bg-white/90 dark:bg-slate-900/90 backdrop-blur border-t border-white/20">
+    <nav class="mx-auto max-w-6xl px-4 py-3">
+      <a class="block py-2" href="#about">about</a>
+      <a class="block py-2" href="#projects">projects</a>
+      <a class="block py-2" href="#gamedev">Game Dev</a>
+      <a class="block py-2" href="#arts">arts</a>
+    </nav>
   </div>
 </header>
 
+<!-- ספייסר כדי שהתוכן לא יתחבא מתחת להדר -->
+<div class="h-16 sm:h-20"></div>
 
-<div class="h-14"></div>
 
 <!-- HERO -->
 <section id="about" class="relative overflow-hidden">
@@ -577,72 +591,48 @@
   </div>
 </footer>
 
+<header id="siteHeader" class="fixed top-0 inset-x-0 z-50">
+  <div class="mx-auto max-w-6xl px-4">
+    <!-- פס ההדר עצמו (שקוף+blur, עובד גם בספארי) -->
+    <div class="mt-2 h-14 flex items-center justify-between rounded-2xl
+                border border-white/20 bg-white/10 dark:bg-slate-900/40
+                backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)]">
+      <!-- לוגו/שם -->
+      <a href="#about" class="px-3 font-semibold">Liza</a>
 
-  <script>
-    // Dark mode toggle
-    const themeBtn = document.getElementById('themeBtn');
-    const root = document.documentElement;
-    const stored = localStorage.getItem('theme');
-    if (stored === 'dark') root.classList.add('dark');
-    if (themeBtn) {
-      themeBtn.addEventListener('click', () => {
-        root.classList.toggle('dark');
-        localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
-      });
-    }
-document.getElementById('year').textContent = new Date().getFullYear();
+      <!-- תפריט דסקטופ -->
+      <nav class="hidden sm:block">
+        <ul class="flex items-center gap-6 px-3 text-base">
+          <li><a class="hover:underline" href="#about">about</a></li>
+          <li><a class="hover:underline" href="#projects">projects</a></li>
+          <li><a class="hover:underline" href="#gamedev">Game Dev</a></li>
+          <li><a class="hover:underline" href="#arts">arts</a></li>
+        </ul>
+      </nav>
 
-    // Smooth anchor scrolling with sticky-header offset
-    const headerEl = document.getElementById('siteHeader');
-    function scrollToHash(hash){
-      const el = document.querySelector(hash);
-      if(!el) return;
-      const headerH = (headerEl?.offsetHeight || 0) + 8; // small gap
-      const y = el.getBoundingClientRect().top + window.pageYOffset - headerH;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-    document.addEventListener('click', (e)=>{
-      const a = e.target.closest('a[href^="#"]');
-      if(!a) return;
-      const hash = a.getAttribute('href');
-      if(!hash || hash === '#') return;
-      const target = document.querySelector(hash);
-      if(target){
-        e.preventDefault();
-        scrollToHash(hash);
-        history.pushState(null, '', hash);
-      }
-    });
-    window.addEventListener('load', ()=>{
-      if(location.hash) setTimeout(()=>scrollToHash(location.hash), 0);
-    });
-  </script>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const header = document.getElementById('siteHeader');
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+      <!-- כפתור מובייל -->
+      <button id="menuBtn" class="sm:hidden p-3" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="sr-only">menu</span>
+        <svg width="24" height="24" fill="currentColor" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
 
-    // מצב ההדר בגלילה
-    function onScroll() {
-      const scrolled = window.scrollY > 8;
-      header.classList.toggle('bg-white/10', !scrolled);
-      header.classList.toggle('bg-white/80', scrolled);
-      header.classList.toggle('shadow-sm', scrolled);
-    }
-    onScroll();
-    document.addEventListener('scroll', onScroll, { passive: true });
+  <!-- תפריט מובייל נפתח -->
+  <div id="mobileMenu" class="sm:hidden hidden bg-white/90 dark:bg-slate-900/90 backdrop-blur border-t border-white/20">
+    <nav class="mx-auto max-w-6xl px-4 py-3">
+      <a class="block py-2" href="#about">about</a>
+      <a class="block py-2" href="#projects">projects</a>
+      <a class="block py-2" href="#gamedev">Game Dev</a>
+      <a class="block py-2" href="#arts">arts</a>
+    </nav>
+  </div>
+</header>
 
-    // תפריט מובייל + נעילת גלילה כשפתוח
-    menuBtn?.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-      document.documentElement.classList.toggle('overflow-hidden');
-      document.body.classList.toggle('overflow-hidden');
-    });
-  });
-</script>
+<!-- ספייסר כדי שהתוכן לא יתחבא מתחת להדר -->
+<div class="h-16 sm:h-20"></div>
 
 </body>
 </html>
