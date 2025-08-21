@@ -105,27 +105,19 @@
 
     /* תיקון לכפתור ההמבורגר */
   .hamburger{
-    width: 28px;
-    height: 20px;
-    position: relative;
-    display: inline-block;
+    width: 28px; height: 20px; position: relative; display:inline-block;
   }
-  .hamburger span{
-    position: absolute;
-    left: 0; right: 0;
-    height: 2px;
-    background: currentColor;
-    border-radius: 2px;
-    transition: transform .25s ease, top .25s ease, opacity .2s;
+  .hamburger .line{
+    position:absolute; left:0; right:0; height:2px; background:currentColor;
+    border-radius:2px; transition:transform .25s ease, top .25s ease, opacity .2s;
   }
-  .hamburger span:nth-child(1){ top: 0; }
-  .hamburger span:nth-child(2){ top: 9px; }
-  .hamburger span:nth-child(3){ top: 18px; }
+  .hamburger .line:nth-child(1){ top:0; }
+  .hamburger .line:nth-child(2){ top:9px; }
+  .hamburger .line:nth-child(3){ top:18px; }
 
-  .hamburger.active span:nth-child(1){ top: 9px; transform: rotate(45deg); }
-  .hamburger.active span:nth-child(2){ opacity: 0; }
-  .hamburger.active span:nth-child(3){ top: 9px; transform: rotate(-45deg); }
-
+  .hamburger.active .line:nth-child(1){ top:9px; transform:rotate(45deg); }
+  .hamburger.active .line:nth-child(2){ opacity:0; }
+  .hamburger.active .line:nth-child(3){ top:9px; transform:rotate(-45deg); }
     /* אנימציה לתפריט נייד */
   #mobileMenu {
     max-height: 0;
@@ -177,26 +169,28 @@
           <ul class="flex items-center gap-4 lg:gap-6 px-3 text-sm lg:text-base">
             <li><a class="hover:underline transition-all" href="#about">about</a></li>
             <li><a class="hover:underline transition-all" href="#projects">projects</a></li>
-            <li><a class="hover:underline transition-all" href="#gamedev">Game Dev</a></li>
+            <li><a class="hover:underline transition-all" href="#gamedev">game dev</a></li>
             <li><a class="hover:underline transition-all" href="#arts">arts</a></li>
           </ul>
         </nav>
 
         <!-- כפתור המבורגר מותאם -->
-        <button id="menuBtn" class="md:hidden p-3 hamburger" aria-expanded="false" aria-controls="mobileMenu">
-          <span class="sr-only">menu</span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+      <button id="menuBtn" class="md:hidden p-3" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="sr-only">menu</span>
+        <span class="hamburger" aria-hidden="true">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </span>
+      </button>
+
 
       <!-- תפריט נייד מותאם -->
       <div id="mobileMenu" class="md:hidden mobile-menu bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-b-xl mt-1 border border-white/20 border-t-0">
         <nav class="px-4 py-2">
           <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#about">about</a>
           <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#projects">projects</a>
-          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#gamedev">Game Dev</a>
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#gamedev">game dev</a>
           <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#arts">arts</a>
         </nav>
       </div>
@@ -557,7 +551,7 @@
   <div class="max-w-5xl mx-auto px-5">
     <h2 class="text-center font-bold text-xl text-white sm:text-2xl md:text-3xl mb-8">✨ Art Gallery ✨ </h2>
 
-    <ul class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-8">
+    <ul class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 justify-items-center">
       <!-- כרטיסייה 1 -->
       <li>
         <a href="assets/flyingpenguine_cr.jpg" target="_blank" rel="noopener"
@@ -591,7 +585,6 @@
         </a>
       </li>
 
-      <!-- כרטיסיות נוספות... פשוט שכפלי והחליפי את הנתיב וה-alt -->
       <li>
         <a href="assets/osprey.jpg" target="_blank" rel="noopener" class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur border border-white/30 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
           <div class="relative aspect-square overflow-hidden">
@@ -685,25 +678,24 @@
 </footer>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const html = document.documentElement, body = document.body;
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const icon = menuBtn.querySelector('.hamburger'); // ← חדש
 
-    function openMenu() {
-      mobileMenu.classList.add('open');      // פותח את התפריט (עובד עם .mobile-menu{max-height:...})
-      menuBtn.classList.add('active');       // הופך את אייקון ההמבורגר ל-X (יש לך CSS לזה)
-      menuBtn.setAttribute('aria-expanded', 'true');
-      html.classList.add('overflow-hidden'); // נועל גלילה מאחורי התפריט
-      body.classList.add('overflow-hidden');
-    }
-    function closeMenu() {
-      mobileMenu.classList.remove('open');
-      menuBtn.classList.remove('active');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      html.classList.remove('overflow-hidden');
-      body.classList.remove('overflow-hidden');
-    }
+      function openMenu(){
+        mobileMenu.classList.add('open');
+        icon.classList.add('active');                   // ← במקום menuBtn.classList...
+        menuBtn.setAttribute('aria-expanded','true');
+        document.documentElement.classList.add('overflow-hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+      function closeMenu(){
+        mobileMenu.classList.remove('open');
+        icon.classList.remove('active');                // ← במקום menuBtn.classList...
+        menuBtn.setAttribute('aria-expanded','false');
+        document.documentElement.classList.remove('overflow-hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
     function toggleMenu() {
       mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
     }
@@ -734,7 +726,5 @@
     });
   });
 </script>
-
-
 </body>
 </html>
