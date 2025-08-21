@@ -9,6 +9,8 @@
   <meta property="og:description" content="קורות חיים ופרויקטים – מדעי המחשב, פיתוח משחקים ותוכן יצירתי." />
   <meta property="og:type" content="website" />
   <meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,6 +58,19 @@
       100% { transform: translate3d(0,-10px,0) scale(1.03); }
     }
   </style>
+  <style>  
+    html, body { overflow-x: clip; }
+    @supports not (overflow: clip) {
+      html, body { overflow-x: hidden; }
+    }
+
+    .decor-wrap { position: relative; overflow: hidden; }
+
+    @media (hover: none) {
+      .no-mobile-scale:hover { transform: none !important; }
+    }
+</style>
+
 </head>
 
 <body class="font-mono min-h-screen bg-[linear-gradient(180deg,#FFF8F8_0%,#B7BCFF_20%,#DF6BFF_40%,#700C8B_60%)] overflow-x-hidden text-slate-900 dark:text-slate-100">
@@ -65,20 +80,39 @@
   <div class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
 
   <!-- Header -->
-<header id="siteHeader" dir="ltr"
-  class="sticky top-0 z-50 w-full backdrop-blur-md bg-black/10 dark:bg-slate-950/10 bg-slate-300/70 shadow-xl">
-  <div class="w-full px-3 sm:px-4 lg:px-6 h-20 flex items-center justify-between">
+<header id="siteHeader"
+  class="fixed md:sticky top-0 inset-x-0 z-50 border-b border-slate-200/60 dark:border-slate-700/60
+         bg-white/80 dark:bg-slate-900/70 backdrop-blur supports-[backdrop-filter]:bg-white/60
+         dark:supports-[backdrop-filter]:bg-slate-900/60">
+  <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+    <a href="#top" class="font-semibold">Liza</a>
 
-    <a href="#top" class="leading-tight font-semibold text-[18px] tracking-tight -ml-1 sm:-ml-1">
-      <span class="block">Liza</span>
-      <span class="block">Chepurko</span>
-    </a>
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-6">
+      <a href="#about" class="py-2">About</a>
+      <a href="#art" class="py-2">Art</a>
+      <a href="#gamedev" class="py-2">Game Dev</a>
+      <a href="#contact" class="py-2">Contact</a>
+    </nav>
 
-    <nav class="flex items-center gap-8 text-sm">
-      <a href="#about"    class="hover:opacity-80">about</a>
-      <a href="#projects" class="hover:opacity-80">projects</a>
-      <a href="#gamedev"  class="hover:opacity-80">Game Dev</a>
-      <a href="#arts"     class="hover:opacity-80">arts</a>
+    <!-- Mobile hamburger -->
+    <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border
+                                border-slate-300/70 dark:border-slate-700/70"
+            aria-expanded="false" aria-controls="mobileMenu">
+      <span class="sr-only">Open menu</span>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200/60 dark:border-slate-700/60">
+    <nav class="px-4 py-3 flex flex-col">
+      <a class="py-2" href="#about">About</a>
+      <a class="py-2" href="#art">Art</a>
+      <a class="py-2" href="#gamedev">Game Dev</a>
+      <a class="py-2" href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -430,7 +464,7 @@
 <!-- Arts -->
 <section id="arts" class="relative py-16" dir="ltr">
 
-  <div class="max-w-5xl mx-auto px-5">
+  <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-center font-bold text-xl text-white sm:text-2xl md:text-3xl mb-8">✨ Art Gallery ✨ </h2>
 
     <ul class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-8">
@@ -560,6 +594,23 @@
   </div>
 </footer>
 
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isHidden));
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
 
   <script>
     // Dark mode toggle
