@@ -617,5 +617,32 @@ document.getElementById('year').textContent = new Date().getFullYear();
       if(location.hash) setTimeout(()=>scrollToHash(location.hash), 0);
     });
   </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('siteHeader');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    // מצב ההדר בגלילה
+    function onScroll() {
+      const scrolled = window.scrollY > 8;
+      header.classList.toggle('bg-white/10', !scrolled);
+      header.classList.toggle('bg-white/80', scrolled);
+      header.classList.toggle('shadow-sm', scrolled);
+    }
+    onScroll();
+    document.addEventListener('scroll', onScroll, { passive: true });
+
+    // תפריט מובייל + נעילת גלילה כשפתוח
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      document.documentElement.classList.toggle('overflow-hidden');
+      document.body.classList.toggle('overflow-hidden');
+    });
+  });
+</script>
+
 </body>
 </html>
