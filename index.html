@@ -1,23 +1,29 @@
 <!doctype html>
 <html lang="he" dir="rtl" class="scroll-smooth overflow-x-hidden">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Liza Chepurko - Protfolio</title>
-  <meta name="description" content="קורות חיים ופרויקטים – מדעי המחשב, פיתוח משחקים ותוכן יצירתי." />
-  <meta property="og:title" content=" Liza Chepurko - Protfolio " />
-  <meta property="og:description" content="קורות חיים ופרויקטים – מדעי המחשב, פיתוח משחקים ותוכן יצירתי." />
+  <title>Liza Chepurko - Portfolio</title>
+  <meta name="description" content="" />
+  <meta property="og:title" content=" Liza Chepurko - Portfolio " />
+  <meta property="og:description" content="" />
   <meta property="og:type" content="website" />
   <meta name="color-scheme" content="light dark">
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Mono for the whole site + Pixel for the yellow headings -->
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+Mono:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+Mono:wght@400;500;700&family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="door-anim.js" defer></script>
+  <script src="candy-anim.js" defer></script>
+  <script src="menu.js" defer></script>
   <script>
     // Tailwind config: map font-mono to our fonts
     tailwind.config = {
@@ -25,140 +31,34 @@
       theme: {
         extend: {
           fontFamily: {
-            mono: ['"JetBrains Mono"','"Noto Sans Mono"','ui-monospace','SFMono-Regular','Menlo','Consolas','"Liberation Mono"','monospace'],
-            pixel: ['"Press Start 2P"','cursive']
+            mono: ['"JetBrains Mono"', '"Noto Sans Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', '"Liberation Mono"', 'monospace'],
+            pixel: ['"Press Start 2P"', 'cursive']
           }
         }
       }
     }
   </script>
 
-  <!-- Global helpers -->
-  <style>
-    /* Pixel headings keep their font */
-    .pixel{
-      font-family: "Press Start 2P", cursive;
-      letter-spacing: .02em;
-    }
-    /* Code blocks: keep mono + LTR so סימנים לא יתהפכו */
-    pre, code, kbd, samp, .code {
-      font-family: "JetBrains Mono","Noto Sans Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
-      font-variant-ligatures: contextual common-ligatures;
-      direction: ltr;
-    }
-    /* Nice mask for hero gradient */
-    .radial-mask { mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%); }
-    /* Offset for sticky header when jumping to anchors */
-    section[id]{ scroll-margin-top: 96px; }
-    /* Floaty animation */
-    @keyframes floaty {
-      0% { transform: translate3d(0,0,0) scale(1); }
-      100% { transform: translate3d(0,-10px,0) scale(1.03); }
-    }
-  </style>
-    <style>
-    html, body { max-width: 100%; overflow-x: clip; }
-    *, *::before, *::after { box-sizing: border-box; }
-    img, video, canvas, svg { max-width: 100%; height: auto; display: block; }
-  </style>
-
-    <style>
-    /* תיקונים למובייל */
-    html, body { 
-      max-width: 100vw; 
-      overflow-x: hidden; 
-    }
-    
-    *, *::before, *::after { 
-      box-sizing: border-box; 
-    }
-    
-    img, video, canvas, svg { 
-      max-width: 100%; 
-      height: auto; 
-      display: block; 
-    }
-
-    .pixel{
-      font-family: "Press Start 2P", cursive;
-      letter-spacing: .02em;
-    }
-
-    pre, code, kbd, samp, .code {
-      font-family: "JetBrains Mono","Noto Sans Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
-      font-variant-ligatures: contextual common-ligatures;
-      direction: ltr;
-    }
-
-    .radial-mask { 
-      mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%); 
-    }
-
-    section[id]{ 
-      scroll-margin-top: 80px; 
-    }
-
-    @keyframes floaty {
-      0% { transform: translate3d(0,0,0) scale(1); }
-      100% { transform: translate3d(0,-10px,0) scale(1.03); }
-    }
-
-    /* תיקון לכפתור ההמבורגר */
-  .hamburger{
-    width: 28px;
-    height: 20px;
-    position: relative;
-    display: inline-block;
-  }
-  .hamburger span{
-    position: absolute;
-    left: 0; right: 0;
-    height: 2px;
-    background: currentColor;
-    border-radius: 2px;
-    transition: transform .25s ease, top .25s ease, opacity .2s;
-  }
-  .hamburger span:nth-child(1){ top: 0; }
-  .hamburger span:nth-child(2){ top: 9px; }
-  .hamburger span:nth-child(3){ top: 18px; }
-
-  .hamburger.active span:nth-child(1){ top: 9px; transform: rotate(45deg); }
-  .hamburger.active span:nth-child(2){ opacity: 0; }
-  .hamburger.active span:nth-child(3){ top: 9px; transform: rotate(-45deg); }
-
-    /* אנימציה לתפריט נייד */
-  #mobileMenu {
-    max-height: 0;
-    overflow: hidden;
-    border-width: 0 !important;
-    margin-top: 0 !important;
-  }
-  /* פתוח = גובה, מסגרת ומרווח קטן */
-  #mobileMenu.open {
-    max-height: 320px;
-    border-width: 1px !important;
-    margin-top: .25rem !important; /* mt-1 */
-  }
-  </style>
 </head>
+<!-- Header -->
 
-<!-- <body class="font-mono min-h-screen bg-[linear-gradient(180deg,#FFF8F8_0%,#B7BCFF_20%,#DF6BFF_40%,#700C8B_60%)] overflow-x-hidden text-slate-900 dark:text-slate-100">
-  Global gradient + blobs background -->
-  <!-- <div class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
-  <div class="absolute top-1/3 -right-24 w-[36rem] h-[36rem] rounded-full bg-purple-400/70 blur-[90px] animate-[floaty_26s_ease-in-out_infinite_alternate]"></div>
-  <div class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div> -->
+<body
+  class="font-mono min-h-screen bg-[linear-gradient(180deg,#FFF8F8_0%,#B7BCFF_20%,#DF6BFF_40%,#700C8B_60%,#34007D_100%)] text-slate-900 dark:text-slate-100 relative">
 
-  <!-- Header -->
-<body class="font-mono min-h-screen bg-[linear-gradient(180deg,#FFF8F8_0%,#B7BCFF_20%,#DF6BFF_40%,#700C8B_60%)] text-slate-900 dark:text-slate-100 relative">
-  
-  <!-- רקע עם כדורים -->
-<div class="absolute inset-x-0 top-0 -z-10 pointer-events-none">
-    <div class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
-    <div class="absolute top-1/3 -right-24 w-[36rem] h-[36rem] rounded-full bg-purple-400/70 blur-[90px] animate-[floaty_26s_ease-in-out_infinite_alternate]"></div>
-    <div class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]"></div>
+  <!-- blobs background -->
+  <div class="absolute inset-x-0 top-0 -z-10 pointer-events-none">
+    <div
+      class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
+    </div>
+    <div
+      class="absolute top-1/3 -right-24 w-[36rem] h-[36rem] rounded-full bg-purple-400/70 blur-[90px] animate-[floaty_26s_ease-in-out_infinite_alternate]">
+    </div>
+    <div
+      class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
+    </div>
   </div>
 
-  <!-- Header מותאם למובייל -->
+  <!-- Header mobile-->
   <header id="siteHeader" class="fixed top-0 inset-x-0 z-50" dir="ltr">
     <div class="mx-auto max-w-6xl px-3 sm:px-4">
       <div class="mt-2 sm:mt-1 h-12 sm:h-14 flex items-center justify-between
@@ -167,12 +67,11 @@
                   bg-white/10 dark:bg-slate-900/40
                   backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)]">
 
-        <!-- שם -->
         <a href="#about" class="px-3 sm:px-4 font-semibold text-sm sm:text-base truncate">
           Liza Chepurko
         </a>
 
-        <!-- תפריט דסקטופ -->
+        <!--desktop navigation-->
         <nav class="hidden md:block">
           <ul class="flex items-center gap-4 lg:gap-6 px-3 text-sm lg:text-base">
             <li><a class="hover:underline transition-all" href="#about">about</a></li>
@@ -182,7 +81,7 @@
           </ul>
         </nav>
 
-        <!-- כפתור המבורגר מותאם -->
+        <!-- hamburger button-->
         <button id="menuBtn" class="md:hidden p-3 hamburger" aria-expanded="false" aria-controls="mobileMenu">
           <span class="sr-only">menu</span>
           <span></span>
@@ -191,675 +90,511 @@
         </button>
       </div>
 
-      <!-- תפריט נייד מותאם -->
-      <div id="mobileMenu" class="md:hidden mobile-menu bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-b-xl mt-1 border border-white/20 border-t-0">
+      <!-- mobile navigation-->
+      <div id="mobileMenu"
+        class="md:hidden mobile-menu bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-b-xl mt-1 border border-white/20 border-t-0">
         <nav class="px-4 py-2">
-          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#about">about</a>
-          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#projects">projects</a>
-          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#gamedev">game dev</a>
-          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded" href="#arts">arts</a>
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#about">about</a>
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#projects">projects</a>
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#gamedev">game dev</a>
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#arts">arts</a>
         </nav>
       </div>
     </div>
   </header>
 
-<!-- ספייסר כדי שהתוכן לא יתחבא מתחת להדר -->
-<div class="h-10 sm:h-12"></div>
+  <!-- spacer -->
+  <div class="h-10 sm:h-12"></div>
 
 
-<!-- HERO -->
-<section id="about" class="relative overflow-hidden">
-  <div class="max-w-6xl mx-auto px-4 py-16 sm:py-24 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
+  <!-- HERO -->
+  <section id="about" class="relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 py-16 sm:py-24 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
 
-    <div class="order-2 md:order-1">
-      <h1 class="mt-10 text-3xl sm:text-5xl font-bold leading-tight">About Me</h1>
-      <p class="mt-2 text-slate-800 dark:text-slate-300 leading-7 sm:leading-8 md:max-w-[80ch] lg:max-w-[95ch] whitespace-pre-line">
-        A third year student of Computer Science.
-        Quick learner with an analytical mindset.
-        Passionate about building meaningful software.
-        Currently volunteering as a game developer on an educational project for diabetic patients, 
-        using gamification to promote health awareness.
-      </p>
-      <p class="mt-6 text-slate-800 font-bold dark:text-slate-300">
-        LANGUAGES: Hebrew, English, Russian
-      </p>
-      <div class="mt-16 flex items-center gap-8">
-        <a href="https://github.com/LizaChepurko" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center hover:opacity-100 opacity-80 transition" aria-label="GitHub">
-          <img src="assets/6214715_github_logo_icon.svg" alt="GitHub" class="w-7 h-7">
-        </a>
-
-        <a href="https://www.linkedin.com/in/liza-chepurko-b69b99302/" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center hover:opacity-100 opacity-80 transition" aria-label="LinkedIn">
-          <img src="assets/6214710_linkedin_logo_icon.svg" alt="LinkedIn" class="w-7 h-7">
-        </a>
-
-        <a href="mailto:lizachep@gmail.com"
-           class="inline-flex items-center gap-2 hover:opacity-100 opacity-80 transition" aria-label="Email">
-          <img src="assets/6214722_email_envelope_gmail_letter_logo_icon.svg" alt="" class="w-7 h-7">
-          <span class="text-sm">lizachep@gmail.com</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- ימין: עיגול + אייקונים -->
-    <div class="order-1 md:order-2 flex flex-col items-center md:items-end gap-4">
-      <!-- עיגול (תמונת פרופיל אופציונלית) -->
-      <div class="w-60 h-60 md:w-80 md:h-80 rounded-full overflow-hidden bg-slate-300/70 shadow-xl">
-        <!-- אם יש תמונה: -->
-        <img src="assets/ProfilePicture.jpeg" alt="Liza Chepurko" class="w-full h-full object-cover">
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Education -->
-<section id="education" class="py-24">
-  <div class="max-w-3xl mx-auto px-4" dir="ltr">
-    <h2 class="text-3xl font-bold text-center">Education</h2>
-
-    <dl class="mt-8 grid grid-cols-[130px_1fr] md:grid-cols-[160px_1fr] gap-x-8 gap-y-8">
-      <!-- שורה 1 -->
-      <dt class="text-amber-700 font-semibold text-lg md:text-xl">2015–2018</dt>
-      <dd class="text-slate-900 dark:text-slate-300 leading-relaxed">
-        <p class="font-medium">“Yitzhak Shamir” High School. Graduated with excellence.</p>
-        <p class="font-medium">
-          Bagrut certificate: Majoring Biology and Social Science.
-          5 units of English and Mathematics.
+      <div class="order-2 md:order-1">
+        <h1 class="mt-10 text-3xl sm:text-5xl font-bold leading-tight">About Me</h1>
+        <p
+          class="mt-2 text-slate-800 dark:text-slate-300 leading-7 sm:leading-8 md:max-w-[80ch] lg:max-w-[95ch] whitespace-pre-line">
+          A third year student of Computer Science.
+          Quick learner with an analytical mindset.
+          Passionate about building meaningful software.
+          Currently volunteering as a game developer on an educational project for diabetic patients,
+          using gamification to promote health awareness.
         </p>
-      </dd>
-
-      <!-- שורה 2 -->
-      <dt class="text-amber-700 font-semibold text-lg md:text-xl">2022–2025</dt>
-      <dd class="text-slate-900 dark:text-slate-300 leading-relaxed">
-        <p class="font-medium">Third year B.Sc student of Computer Science,</p>
-        <p class="font-medium">Ariel University</p>
-      </dd>
-    </dl>
-  </div>
-</section>
-
-<!-- Key Courses -->
-<section id="courses" class="py-16">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center">Key Courses</h2>
-
-    <div class="mt-8 space-y-5">
-      <!-- שורה 1 -->
-      <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
-        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Object Oriented</span></li>
-        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Data Structures</span></li>
-        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">DataBases</span></li>
-        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Software engineering</span></li>
-        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Communication and networking</span></li>
-      </ul>
-
-      <!-- שורה 2 -->
-      <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
-        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Operating systems</span></li>
-        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Game Development</span></li>
-        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Space Engineering</span></li>
-        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Topics in Computer Vision</span></li>
-      </ul>
-
-      <!-- שורה 3 -->
-      <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
-        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Computer Architecture</span></li>
-        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">++C</span></li>
-        <li><span class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Data compression</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Programming Skills and Tools -->
-<section id="skills-tools" class="relative overflow-hidden py-16" dir="ltr">
-
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider uppercase">
-      Programming Skills and Tools
-    </h2>
-
-    <p class="mt-10 md:mt-20 text-lg leading-8 text-center">
-      Java, Python, Linux (Ubuntu OS), Git, PyTorch, Wireshark, C, C#, C++, SQL &amp; MongoDB,
-      Unity, ChatGPT and Android Studio
-    </p>
-  </div>
-</section>
-
-<!-- Chosen Projects -->
-<section id="projects" class="py-16" dir="ltr">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center">Projects</h2>
-
-    <ul class="mt-8 sm:mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-      <!-- 1) OOP – Chess game -->
-      <a href="https://github.com/LizaChepurko/OOP1" target="_blank" rel="noopener"
-        class="block w-full max-w-[320px] shadow-2xl">
-         <article class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-            <img src="assets/Screenshot 2025-08-20 163037.png" loading="lazy" alt="Artwork 1">
-          </div>
-          <h3 class="mt-3 text-center text-sm">Oop - Viking Chess</h3>
-        </article>
-      </a>
-
-      <!-- 2) Operating systems -->
-      <a href="https://github.com/LizaChepurko/Operating_Systems_FinalProject/blob/main/README.pdf" target="_blank" rel="noopener"
-        class="block w-full max-w-[320px] shadow-2xl">
-         <article class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-            <img src="assets/Screenshot 2025-08-20 164236.png" loading="lazy" alt="Artwork 1">
-          </div>
-          <h3 class="mt-3 text-center text-sm">Operating Systems - MST solver server</h3>
-        </article>
-      </a>
-
-      <!-- 3) Catan -->
-      <a href="https://github.com/LizaChepurko/Catan/blob/main/README%20.pdf" target="_blank" rel="noopener"
-        class="block w-full max-w-[320px] shadow-2xl">
-         <article class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-            <img src="assets/Screenshot 2025-08-20 143257.png" loading="lazy" alt="Artwork 1">
-          </div>
-          <h3 class="mt-3 text-center text-sm">Catan C++</h3>
-        </article>
-      </a>
-
-      <!-- 4) Volunteering app -->
-      <a href="https://github.com/AidLink-app/AidLink-Volunteering-app" target="_blank" rel="noopener"
-        class="block w-full max-w-[320px] shadow-2xl">
-         <article class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-            <video 
-              class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" 
-              autoplay 
-              loop 
-              muted 
-              playsinline
-            >
-            <source src="assets/WhatsApp Video 2025-08-20 at 14.13.56.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <h3 class="mt-3 text-center text-sm">Valunteering app</h3>
-        </article>
-      </a>
-
-            <!-- 5) Space engineering final project -->
-      <a href="https://github.com/LizaChepurko/Target-tracker" target="_blank" rel="noopener"
-        class="block w-full max-w-[320px] shadow-2xl">
-         <article class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-            <video 
-              class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" 
-              autoplay 
-              loop 
-              muted 
-              playsinline
-            >
-            <source src="assets/457015830-8916909f-8696-48e9-b0c6-2cf88fb790ca.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <h3 class="mt-3 text-center text-sm">Space engineering final project</h3>
-        </article>
-      </a>
-
-       <article class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03] shadow-2xl">
-        <h3 class="font-semibold mb-3">See More Projects</h3>
-        <ul class="list-disc pl-5 space-y-1 text-sm">
-          <li>
-            <a class="underline underline-offset-4 hover:opacity-40" 
-              href="https://github.com/LizaChepurko/Assignment2" 
-              target="_blank">
-              Projects in C
-            </a>
-          </li>
-          <li>
-            <a class="underline underline-offset-4 hover:opacity-40" 
-              href="https://github.com/LizaChepurko/N-Ary-Tree-Iterators" 
-              target="_blank">
-              More projects in C++
-            </a>
-          </li>
-          <li>
-            <a class="underline underline-offset-4 hover:opacity-40" 
-              href="https://github.com/LizaChepurko/OOP2" 
-              target="_blank">
-              OOP small network
-            </a>
-          </li>
-          <li>
-            <a class="underline underline-offset-4 hover:opacity-40" 
-              href="files/פרויקט סיום רשתות תקשורת 2024.pdf" 
-              download="Network-Protocol-Design.pdf">
-              Network protocol design
-            </a>
-          </li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
-
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<style>
-  .pixel { font-family: "Press Start 2P", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
-</style>
-
-<!-- Game Development -->
-<section id="gamedev" class="py-16" dir="ltr">
-  <!-- קונטיינר צר יותר כדי שהעמודות יתקרבו -->
-  <div class="max-w-5xl mx-auto px-4">
-    <!-- כותרת בפונט פיקסל + ריווח למטה -->
-<div class="mb-8 flex items-center justify-center gap-2">
-  <h2 class="pixel text-center text-lg sm:text-2xl md:text-3xl tracking-wide whitespace-nowrap">
-    Game Development
-  </h2>
-  <img id="CandyAnim"
-       src="assets/candy_sprite-1.png"
-       alt=""
-       aria-hidden="true"
-       class="shrink-0 w-7 h-7 sm:w-9 sm:h-9 md:w-12 md:h-12 motion-safe:animate-bounce">
-</div>
-
-    <!-- שתי עמודות סימטריות, ממורכזות -->
-    <div class="grid md:grid-cols-2 gap-x-6 gap-y-10 items-start justify-items-center">
-      <!-- עמודה שמאל -->
-      <div class="space-y-5">
-      <a href="https://lizachep.itch.io/final-game-house" target="_blank" rel="noopener"
-        class="block w-full max-w-[320px] shadow-2xl">
-        <article class="rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-            <video 
-              class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" 
-              autoplay 
-              loop 
-              muted 
-              playsinline
-            >
-              <source src="assets/Untitled video - Made with Clipchamp (1).mp4" type="video/mp4" />
-            </video>
-          </div>
-          <h3 class="mt-3 text-center text-lg font-semibold">Ready, Set, Go!</h3>
-          <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed">
-            One of the winners in an inner contest. The game was created specifically for adults with intellectual disabilities and challenges with organization and planning, and promotes independence. The game was developed in collaboration with the Department of Occupational Therapy.
-          </p>
-        </article>
-      </a>
-      <a href="https://lizachep.itch.io/multimotek" target="_blank" rel="noopener"
-        class="block w-full max-w-[320px] shadow-2xl">
-        <article class="rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-            <video 
-            class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" 
-            autoplay 
-            loop 
-            muted 
-            playsinline
-          >
-            <source src="assets/Multimotek.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          </div>
-          <h3 class="mt-3 text-center text-lg font-semibold">Multimotek</h3>
-          <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed">
-            A volunteer project that I am doing in collaboration with an association for diabetics in Israel
-          </p>
-        </article>
-      </a>
-      </div>
-      <div class="space-y-5 flex flex-col items-center self-start">
-      <a href="https://github.com/Liza-Gaming/Jenga_tower" target="_blank" rel="noopener"
-        class="block w-full max-w-[320px] shadow-2xl">
-        <article class="rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-          <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-            <video 
-            class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" 
-            autoplay 
-            loop 
-            muted 
-            playsinline
-          >
-            <source src="assets/Jenga.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          </div>
-          <h3 class="mt-3 text-center text-lg font-semibold">Jenga Tower</h3>
-          <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed">
-            Jenga Tower is a Unity multiplayer mobile 3D game that I designed and built on my own. I started this project as a creative outlet
-          </p>
-        </article>
-        </a>
-        <div class="w-full max-w-[320px] text-center ">
-          <p class="text-lg sm:text-xl md:text-xl text-white text-center leading-relaxed"> For all my games you can visit my
-          <a
-            href="https://github.com/orgs/Liza-Gaming/repositories"
-            target="_blank" rel="noopener"
-            class="inline-flex flex-col items-center gap-3 text-white font-medium underline decoration-white/60 hover:decoration-white"
-          >
-            <span>Organization</span>
-          <img id="doorAnim"
-              src="assets/sprite-1.png"
-              alt="Door animation"
-              class="block w-60 h-auto mx-auto rounded-xl shadow-sm select-none"
-              draggable="false">
-
+        <p class="mt-6 text-slate-800 font-bold dark:text-slate-300">
+          LANGUAGES: Hebrew, English, Russian
+        </p>
+        <div class="mt-16 flex items-center gap-8">
+          <a href="https://github.com/LizaChepurko" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center hover:opacity-100 opacity-80 transition" aria-label="GitHub">
+            <img src="assets/6214715_github_logo_icon.svg" alt="GitHub" class="w-7 h-7">
           </a>
-          </p>
+
+          <a href="https://www.linkedin.com/in/liza-chepurko-b69b99302/" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center hover:opacity-100 opacity-80 transition" aria-label="LinkedIn">
+            <img src="assets/6214710_linkedin_logo_icon.svg" alt="LinkedIn" class="w-7 h-7">
+          </a>
+
+          <a href="mailto:lizachep@gmail.com"
+            class="inline-flex items-center gap-2 hover:opacity-100 opacity-80 transition" aria-label="Email">
+            <img src="assets/6214722_email_envelope_gmail_letter_logo_icon.svg" alt="" class="w-7 h-7">
+            <span class="text-sm">lizachep@gmail.com</span>
+          </a>
         </div>
       </div>
 
+      <div class="order-1 md:order-2 flex flex-col items-center md:items-end gap-4">
+        <div class="w-60 h-60 md:w-80 md:h-80 rounded-full overflow-hidden bg-slate-300/70 shadow-xl">
+          <img src="assets/ProfilePicture.jpeg" alt="Liza Chepurko" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="py-24">
+    <div class="max-w-3xl mx-auto px-4" dir="ltr">
+      <h2 class="text-3xl font-bold text-center">Education</h2>
+
+      <dl class="mt-8 grid grid-cols-[130px_1fr] md:grid-cols-[160px_1fr] gap-x-8 gap-y-8">
+
+        <dt class="text-amber-700 font-semibold text-lg md:text-xl">2015–2018</dt>
+        <dd class="text-slate-900 dark:text-slate-300 leading-relaxed">
+          <p class="font-medium">“Yitzhak Shamir” High School. Graduated with excellence.</p>
+          <p class="font-medium">
+            Bagrut certificate: Majoring Biology and Social Science.
+            5 units of English and Mathematics.
+          </p>
+        </dd>
+
+        <dt class="text-amber-700 font-semibold text-lg md:text-xl">2022–2025</dt>
+        <dd class="text-slate-900 dark:text-slate-300 leading-relaxed">
+          <p class="font-medium">Third year B.Sc student of Computer Science,</p>
+          <p class="font-medium">Ariel University</p>
+        </dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Key Courses -->
+  <section id="courses" class="py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center">Key Courses</h2>
+
+      <div class="mt-8 space-y-5">
+        <!--line 1-->
+        <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Object
+              Oriented</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Data
+              Structures</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Databases</span>
+          </li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Software
+              engineering</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Communication
+              and networking</span></li>
+        </ul>
+
+        <!--line 2-->
+        <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Operating
+              systems</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Game
+              Development</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Space
+              Engineering</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Topics
+              in Computer Vision</span></li>
+        </ul>
+
+        <!--line 3-->
+        <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Computer
+              Architecture</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">++C</span>
+          </li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Data
+              compression</span></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<style>
-  .pixel { color: #ffc927; }
-  .dark .pixel { color: #FBBF24; }
-</style>
+  <!-- Programming Skills and Tools -->
+  <section id="skills-tools" class="relative overflow-hidden py-16" dir="ltr">
 
-<!-- Arts -->
-<section id="arts" class="relative py-16" dir="ltr">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider uppercase">
+        Programming Skills and Tools
+      </h2>
 
-  <div class="max-w-5xl mx-auto px-5">
-    <h2 class="text-center font-bold text-xl text-white sm:text-2xl md:text-3xl mb-8">✨ Art Gallery ✨ </h2>
+      <p class="mt-10 md:mt-20 text-lg leading-8 text-center">
+        Java, Python, Linux (Ubuntu OS), Git, PyTorch, Wireshark, C, C#, C++, SQL &amp; MongoDB,
+        Unity, ChatGPT and Android Studio
+      </p>
+    </div>
+  </section>
 
-    <ul class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-      <!-- כרטיסייה 1 -->
-      <li>
-        <a href="assets/flyingpenguine_cr.jpg" target="_blank" rel="noopener"
-           class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
-          <div class="relative aspect-square overflow-hidden">
-            <img src="assets/flyingpenguine_cr.jpg" loading="lazy" alt="Artwork 1"
-                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-          </div>
+  <!-- Chosen Projects -->
+  <section id="projects" class="py-16" dir="ltr">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center">Projects</h2>
+      <section class="py-3"></section>
+      <ul class="mt-8 sm:mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <!-- 1) OOP – Chess game -->
+        <a href="https://github.com/LizaChepurko/OOP1" target="_blank" rel="noopener"
+          class="block w-full max-w-[320px] shadow-2xl">
+          <article
+            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+              <img src="assets/Screenshot 2025-08-20 163037.png" loading="lazy" alt="Artwork 1">
+            </div>
+            <h3 class="mt-3 text-center text-sm">Viking Chess</h3>
+            <p class="text-sm text-slate-800 text-center dark:text-slate-800">Oop project in Java</p>
+          </article>
         </a>
-      </li>
 
-      <!-- כרטיסייה 2 -->
-      <li>
-        <a href="assets/cupcake.jpg" target="_blank" rel="noopener"
-           class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
-          <div class="relative aspect-square overflow-hidden">
-            <img src="assets/cupcake.jpg" loading="lazy" alt="Artwork 2"
-                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-          </div>
+        <!-- 2) Operating systems -->
+        <a href="https://github.com/LizaChepurko/Operating_Systems_FinalProject/blob/main/README.pdf" target="_blank"
+          rel="noopener" class="block w-full max-w-[320px] shadow-2xl">
+          <article
+            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+              <img src="assets/Screenshot 2025-08-20 164236.png" loading="lazy" alt="Artwork 1">
+            </div>
+            <h3 class="mt-4 text-center text-sm">Operating Systems - MST solver server</h3>
+            <p class="mt-2 text-sm text-slate-800 text-center dark:text-slate-800">User enters a graph arrangement and
+              receives the MST from the server </p>
+          </article>
         </a>
-      </li>
 
-      <!-- כרטיסייה 3 -->
-      <li>
-        <a href="assets/fish.jpg" target="_blank" rel="noopener"
-           class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
-          <div class="relative aspect-square overflow-hidden">
-            <img src="assets/fish.jpg" loading="lazy" alt="Artwork 3"
-                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-          </div>
+        <!-- 3) Catan -->
+        <a href="https://github.com/LizaChepurko/Catan/blob/main/README%20.pdf" target="_blank" rel="noopener"
+          class="block w-full max-w-[320px] shadow-2xl">
+          <article
+            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+              <img src="assets/Screenshot 2025-08-20 143257.png" loading="lazy" alt="Artwork 1">
+            </div>
+            <h3 class="mt-3 text-center text-sm">Catan</h3>
+            <p class="mt-4 text-sm text-slate-800 text-center dark:text-slate-800">Catan game logic in C++ including a
+              board based on a graph structure</p>
+          </article>
         </a>
-      </li>
 
-      <li>
-        <a href="assets/osprey.jpg" target="_blank" rel="noopener" 
-        class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
-          <div class="relative aspect-square overflow-hidden">
-            <img src="assets/osprey.jpg" loading="lazy" alt="Artwork 4"
-                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-          </div>
+        <!-- 4) Volunteering app -->
+        <a href="https://github.com/AidLink-app/AidLink-Volunteering-app" target="_blank" rel="noopener"
+          class="block w-full max-w-[320px] shadow-2xl">
+          <article
+            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+              <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" autoplay
+                loop muted playsinline>
+                <source src="assets/WhatsApp Video 2025-08-20 at 14.13.56.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <h3 class="mt-3 text-center text-sm">Volunteering app</h3>
+            <p class="mt-2 text-sm text-slate-800 text-center dark:text-slate-800">An application developed as part of a
+              software engineering course. Connects volunteers with organizers</p>
+          </article>
         </a>
-      </li>
-      <li>
-        <a href="assets/nightjarandwryneck.jpg" target="_blank" rel="noopener" 
-        class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
-          <div class="relative aspect-square overflow-hidden">
-            <img src="assets/nightjarandwryneck.jpg" loading="lazy" alt="Artwork 5"
-                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-          </div>
+
+        <!-- 5) Space engineering final project -->
+        <a href="https://github.com/LizaChepurko/Target-tracker" target="_blank" rel="noopener"
+          class="block w-full max-w-[320px] shadow-2xl">
+          <article
+            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+              <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" autoplay
+                loop muted playsinline>
+                <source src="assets/457015830-8916909f-8696-48e9-b0c6-2cf88fb790ca.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <h3 class="mt-3 text-center text-sm">Space engineering final project</h3>
+            <p class="mt-1 text-sm text-slate-800 text-center dark:text-slate-800">A Python tool to generate animated
+              Google Earth KML files and simulate a camera fly‐along that “watches” targets.</p>
+          </article>
         </a>
-      </li>
-      <li>
-        <a href="assets/bluepenpelican_cr.jpg" target="_blank" rel="noopener" 
-        class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
-          <div class="relative aspect-square overflow-hidden">
-            <img src="assets/bluepenpelican_cr.jpg" loading="lazy" alt="Artwork 6"
-                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+
+        <article class="self-start h-auto w-full max-w-[320px] rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30
+         transition-transform duration-300 hover:scale-[1.03] shadow-2xl">
+          <h3 class="font-semibold mb-3">See More Projects</h3>
+          <ul class="list-disc pl-5 space-y-1 text-sm">
+            <li>
+              <a class="underline underline-offset-4 hover:opacity-40"
+                href="https://github.com/LizaChepurko/Assignment2" target="_blank">
+                Projects in C
+              </a>
+            </li>
+            <li>
+              <a class="underline underline-offset-4 hover:opacity-40"
+                href="https://github.com/LizaChepurko/N-Ary-Tree-Iterators" target="_blank">
+                More projects in C++
+              </a>
+            </li>
+            <li>
+              <a class="underline underline-offset-4 hover:opacity-40" href="https://github.com/LizaChepurko/OOP2"
+                target="_blank">
+                OOP small social network
+              </a>
+            </li>
+            <li>
+              <a class="underline underline-offset-4 hover:opacity-40" href="files/פרויקט סיום רשתות תקשורת 2024.pdf"
+                download="Network-Protocol-Design.pdf">
+                Network protocol design
+              </a>
+            </li>
+          </ul>
+        </article>
+    </div>
+    </div>
+  </section>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Game Development -->
+  <section id="gamedev" class="py-16" dir="ltr">
+
+    <div class="max-w-5xl mx-auto px-4">
+
+      <div class="mb-8 flex items-center justify-center gap-2">
+        <h2 class="pixel text-center text-lg sm:text-2xl md:text-3xl tracking-wide whitespace-nowrap">
+          Game Development
+        </h2>
+        <img id="CandyAnim" src="assets/candy_sprite-1.png" alt=""
+          class="shrink-0 w-7 h-7 sm:w-9 sm:h-9 md:w-12 md:h-12 motion-safe:animate-bounce" draggable="false" />
+      </div>
+
+
+      <div class="grid md:grid-cols-2 gap-x-6 gap-y-10 items-start justify-items-center">
+
+        <div class="space-y-5">
+          <a href="https://lizachep.itch.io/final-game-house" target="_blank" rel="noopener"
+            class="block w-full max-w-[320px] shadow-2xl">
+            <article
+              class="rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+              <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+                <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110"
+                  autoplay loop muted playsinline>
+                  <source src="assets/Untitled video - Made with Clipchamp (1).mp4" type="video/mp4" />
+                </video>
+              </div>
+              <h3 class="mt-3 text-center text-lg font-semibold">Ready, Set, Go!</h3>
+              <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed">
+                One of the winners in an inner contest. The game was created specifically for adults with intellectual
+                disabilities and challenges with organization and planning, and promotes independence. The game was
+                developed in collaboration with the Department of Occupational Therapy.
+              </p>
+            </article>
+          </a>
+          <a href="https://lizachep.itch.io/multimotek" target="_blank" rel="noopener"
+            class="block w-full max-w-[320px] shadow-2xl">
+            <article
+              class="rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+              <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+                <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110"
+                  autoplay loop muted playsinline>
+                  <source src="assets/Multimotek.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <h3 class="mt-3 text-center text-lg font-semibold">Multimotek</h3>
+              <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed">
+                A volunteer project that I am doing in collaboration with an association for diabetics in Israel
+              </p>
+            </article>
+          </a>
+        </div>
+        <div class="space-y-5 flex flex-col items-center self-start">
+          <a href="https://github.com/Liza-Gaming/Jenga_tower" target="_blank" rel="noopener"
+            class="block w-full max-w-[320px] shadow-2xl">
+            <article
+              class="rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+              <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+                <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110"
+                  autoplay loop muted playsinline>
+                  <source src="assets/Jenga.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <h3 class="mt-3 text-center text-lg font-semibold">Jenga Tower</h3>
+              <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed">
+                Jenga Tower is a Unity multiplayer mobile 3D game that I designed and built on my own. I started this
+                project as a creative outlet
+              </p>
+            </article>
+          </a>
+          <div class="w-full max-w-[320px] text-center ">
+            <p class="text-lg sm:text-xl md:text-xl text-white text-center leading-relaxed"> For all my games you can
+              visit my
+              <a href="https://github.com/orgs/Liza-Gaming/repositories" target="_blank" rel="noopener"
+                class="inline-flex flex-col items-center gap-3 text-white font-medium underline decoration-white/60 hover:decoration-white">
+                <span>Organization</span>
+                <img id="doorAnim" src="assets/sprite-1.png" alt=""
+                  class="block w-60 h-auto mx-auto rounded-xl shadow-sm select-none" draggable="false" />
+              </a>
+            </p>
           </div>
-        </a>
-      </li>
-      <li>
-        <a href="assets/pug.jpg" target="_blank" rel="noopener" 
-        class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
-          <div class="relative aspect-square overflow-hidden">
-            <img src="assets/pug.jpg" loading="lazy" alt="Artwork 7"
-                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="assets/chicken.jpg" target="_blank" rel="noopener" 
-        class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
-          <div class="relative aspect-square overflow-hidden">
-            <img src="assets/chicken.jpg" loading="lazy" alt="Artwork 8"
-                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="assets/drawing1.jpg" target="_blank" rel="noopener" 
-        class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
-          <div class="relative aspect-square overflow-hidden">
-            <img src="assets/drawing1.jpg" loading="lazy" alt="Artwork 9"
-                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="assets/pinkFalcon.jpg" target="_blank" rel="noopener" 
-        class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
-          <div class="relative aspect-square overflow-hidden">
-            <img src="assets/pinkFalcon.jpg" loading="lazy" alt="Artwork 10"
-                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="assets/WhatsApp Image 2025-08-20 at 16.59.46.jpeg" target="_blank" rel="noopener" 
-        class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
-          <div class="relative aspect-square overflow-hidden">
-            <img src="assets/WhatsApp Image 2025-08-20 at 16.59.46.jpeg" loading="lazy" alt="Artwork 11"
-                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="assets/WhatsApp Image 2025-08-20 at 17.00.50.jpeg" target="_blank" rel="noopener" 
-        class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
-          <div class="relative aspect-square overflow-hidden">
-            <img src="assets/WhatsApp Image 2025-08-20 at 17.00.50.jpeg" loading="lazy" alt="Artwork 12"
-                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
-</section>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Arts -->
+  <section id="arts" class="relative py-16" dir="ltr">
+
+    <div class="max-w-5xl mx-auto px-5">
+      <h2 class="text-center font-bold text-xl text-white sm:text-2xl md:text-3xl mb-8">✨ Art Gallery ✨ </h2>
+
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+
+        <li>
+          <a href="assets/flyingpenguine_cr.jpg" target="_blank" rel="noopener"
+            class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
+            <div class="relative aspect-square overflow-hidden">
+              <img src="assets/flyingpenguine_cr.jpg" loading="lazy" alt="Artwork 1"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+            </div>
+          </a>
+        </li>
 
 
-<!-- Footer -->
-<footer class="relative mt-16">
-  <!-- גרדיאנט הרקע -->
-  <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#B10CBF_0%,#D86AFF_45%,#BFD2FF_100%)]"></div>
-  <!-- קו/צל עדין מלמעלה -->
-  <div class="absolute inset-x-0 top-0 h-px bg-black/15 dark:bg-white/15"></div>
-
-  <!-- תוכן הפוטר -->
-  <div class="h-10 md:h-12 flex items-center justify-center">
-    <p class="text-sm text-black/80">
-       <span id="year"></span> Liza Chepurko 2025 ©
-    </p>
-  </div>
-</footer>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const html = document.documentElement, body = document.body;
-
-    function openMenu() {
-      mobileMenu.classList.add('open');
-      menuBtn.classList.add('active');
-      menuBtn.setAttribute('aria-expanded', 'true');
-      html.classList.add('overflow-hidden');
-      body.classList.add('overflow-hidden');
-    }
-    function closeMenu() {
-      mobileMenu.classList.remove('open');
-      menuBtn.classList.remove('active');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      html.classList.remove('overflow-hidden');
-      body.classList.remove('overflow-hidden');
-    }
-    function toggleMenu() {
-      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
-    }
-
-    // פתיחה/סגירה בלחיצה על הכפתור
-    menuBtn?.addEventListener('click', toggleMenu);
-    // תמיכה טובה למובייל (למנוע דאבל-טריגר)
-    menuBtn?.addEventListener('touchend', (e) => { e.preventDefault(); toggleMenu(); }, { passive:false });
-
-    // סגירה בלחיצה על קישור בתוך התפריט
-    mobileMenu.addEventListener('click', (e) => {
-      const a = e.target.closest('a');
-      if (a) closeMenu();
-    });
-
-    // סגירה בלחיצה מחוץ לתפריט
-    document.addEventListener('click', (e) => {
-      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
-    });
-
-    // ESC סוגר
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-
-    // אם עוברים למסך רחב (>= md) – סוגרים אוטומטית
-    const mql = window.matchMedia('(min-width: 768px)');
-    (mql.addEventListener || mql.addListener).call(mql, 'change' in mql ? 'change' : (cb => mql.addListener(cb)), (e) => {
-      if (e.matches) closeMenu();
-    });
-  });
-</script>
-
-<script>
-(() => {
-  const el = document.getElementById('doorAnim');
-  if (!el) return;
-
-  const frames = Array.from({length: 9}, (_, i) => `assets/sprite-${i+1}.png`);
-  const frameDuration = 75;
-
-  // Preload
-  frames.forEach(src => { const i = new Image(); i.src = src; });
-
-  let idx = 0;
-  let timer = null;
-  let direction = 0;
-  const last = frames.length - 1;
-
-  const show = (i) => {
-    idx = i;
-    el.src = frames[i];
-  };
-  show(0);
-
-  const stop = () => {
-    if (timer) clearInterval(timer);
-    timer = null;
-    direction = 0;
-  };
-
-  const step = () => {
-    const next = idx + direction;
-    if (next < 0 || next > last) {
-      stop();
-      return;
-    }
-    show(next);
-  };
-
-
-  const play = (dir) => {
-    if (direction === dir) return;
-    stop();
-    direction = dir;
-    timer = setInterval(step, frameDuration);
-  };
-
-  // דסקטופ: ריחוף פותח, יציאה סוגרת
-  el.addEventListener('mouseenter', () => play(1));
-  el.addEventListener('mouseleave', () => play(-1));
-
-  // טאץ'/מובייל: נגיעה פותחת, הרמה סוגרת
-  el.addEventListener('pointerdown', () => play(1));
-  el.addEventListener('pointerup', () => play(-1));
-  el.addEventListener('pointercancel', () => play(-1));
-
-  // חלופה במכשירים בלי hover: טאפ אחד פותח, טאפ שני סוגר
-  if (window.matchMedia && window.matchMedia('(hover: none)').matches) {
-    el.addEventListener('click', () => {
-      // אם פתוח/בסיומו → סגור, אחרת פתח
-      if (idx === last || direction === 1) play(-1);
-      else play(1);
-    });
-  }
-
-  el.style.touchAction = 'manipulation';
-})();
-</script>
-
-<script>
-(() => {
-  const el = document.getElementById('CandyAnim');
-  if (!el) return;
-
-  // 3 פריימים: sprite-1.png, sprite-2.png, sprite-3.png
-  const frames = Array.from({ length: 3 }, (_, i) => `assets/candy_sprite-${i+1}.png`);
-  const frameDuration = 120; // מ״ש לכל פריים – אפשר לשנות למהירות
-
-  // Preload
-  frames.forEach(src => { const img = new Image(); img.src = src; });
-
-  let idx = 0;
-  el.src = frames[0];
-
-  let nextAt = 0;
-  let running = true;
-  let inView = true;
-
-  // לעצור כשמחוץ למסך (חוסך ביצועים)
-  const io = new IntersectionObserver(([e]) => { inView = e.isIntersecting; });
-  io.observe(el);
-
-  const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-
-  function loop(ts) {
-    if (!running) return;
-    if (!document.hidden && inView && !prefersReduced && ts >= nextAt) {
-      idx = (idx + 1) % frames.length; // 1→2→3→1...
-      el.src = frames[idx];
-      nextAt = ts + frameDuration;
-    }
-    requestAnimationFrame(loop);
-  }
-  requestAnimationFrame(loop);
-
-  el.style.touchAction = 'manipulation';
-})();
-</script>
+        <li>
+          <a href="assets/cupcake.jpg" target="_blank" rel="noopener"
+            class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
+            <div class="relative aspect-square overflow-hidden">
+              <img src="assets/cupcake.jpg" loading="lazy" alt="Artwork 2"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="assets/fish.jpg" target="_blank" rel="noopener"
+            class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
+            <div class="relative aspect-square overflow-hidden">
+              <img src="assets/fish.jpg" loading="lazy" alt="Artwork 3"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="assets/osprey.jpg" target="_blank" rel="noopener"
+            class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
+            <div class="relative aspect-square overflow-hidden">
+              <img src="assets/osprey.jpg" loading="lazy" alt="Artwork 4"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="assets/nightjarandwryneck.jpg" target="_blank" rel="noopener"
+            class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
+            <div class="relative aspect-square overflow-hidden">
+              <img src="assets/nightjarandwryneck.jpg" loading="lazy" alt="Artwork 5"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="assets/bluepenpelican_cr.jpg" target="_blank" rel="noopener"
+            class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
+            <div class="relative aspect-square overflow-hidden">
+              <img src="assets/bluepenpelican_cr.jpg" loading="lazy" alt="Artwork 6"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="assets/pug.jpg" target="_blank" rel="noopener"
+            class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
+            <div class="relative aspect-square overflow-hidden">
+              <img src="assets/pug.jpg" loading="lazy" alt="Artwork 7"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="assets/chicken.jpg" target="_blank" rel="noopener"
+            class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
+            <div class="relative aspect-square overflow-hidden">
+              <img src="assets/chicken.jpg" loading="lazy" alt="Artwork 8"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="assets/drawing1.jpg" target="_blank" rel="noopener"
+            class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
+            <div class="relative aspect-square overflow-hidden">
+              <img src="assets/drawing1.jpg" loading="lazy" alt="Artwork 9"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="assets/pinkFalcon.jpg" target="_blank" rel="noopener"
+            class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
+            <div class="relative aspect-square overflow-hidden">
+              <img src="assets/pinkFalcon.jpg" loading="lazy" alt="Artwork 10"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="assets/WhatsApp Image 2025-08-20 at 16.59.46.jpeg" target="_blank" rel="noopener"
+            class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
+            <div class="relative aspect-square overflow-hidden">
+              <img src="assets/WhatsApp Image 2025-08-20 at 16.59.46.jpeg" loading="lazy" alt="Artwork 11"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="assets/WhatsApp Image 2025-08-20 at 17.00.50.jpeg" target="_blank" rel="noopener"
+            class="group block rounded-3xl overflow-hidden bg-white/40 backdrop-blur shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 shadow-xl">
+            <div class="relative aspect-square overflow-hidden">
+              <img src="assets/WhatsApp Image 2025-08-20 at 17.00.50.jpeg" loading="lazy" alt="Artwork 12"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110">
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
 
 
+  <!-- Footer -->
+  <footer class="relative mt-16">
+    <!-- gradient-->
+    <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#B10CBF_0%,#D86AFF_45%,#BFD2FF_100%)]"></div>
+    <!-- shadow above-->
+    <div class="absolute inset-x-0 top-0 h-px bg-black/15 dark:bg-white/15"></div>
 
+    <div class="h-10 md:h-12 flex items-center justify-center">
+      <p class="text-sm text-black/80">
+        <span id="year"></span> Liza Chepurko 2025 ©
+      </p>
+    </div>
+  </footer>
 </body>
+
 </html>
