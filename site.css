@@ -45,5 +45,5 @@ pre, code, kbd, samp, .code {
 }
 
 @media (max-width: 768px) {
-  .bg-site-tile { background-size: 700px auto; }
+  .bg-site-tile { background-size: 1100px auto; }
 }
