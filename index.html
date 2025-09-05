@@ -49,336 +49,333 @@
 
 <body
   class="font-mono min-h-screen bg-[linear-gradient(180deg,#FFF8F8_0%,#B7BCFF_20%,#DF6BFF_40%,#700C8B_60%,#34007D_100%)] text-slate-900 dark:text-slate-100 relative">
-  <div class="bg-site-tile"></div>
-  <div class="relative z-10">
-    <div class="absolute inset-x-0 top-0 -z-10 pointer-events-none"> ... </div>
-    <!-- blobs background -->
-    <div class="absolute inset-x-0 top-0 -z-10 pointer-events-none">
-      <div
-        class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
-      </div>
-      <div
-        class="absolute top-1/3 -right-24 w-[36rem] h-[36rem] rounded-full bg-purple-400/70 blur-[90px] animate-[floaty_26s_ease-in-out_infinite_alternate]">
-      </div>
-      <div
-        class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
-      </div>
-    </div>
 
-    <!-- Header mobile-->
-    <header id="siteHeader" class="fixed top-0 inset-x-0 z-50" dir="ltr">
-      <div class="mx-auto max-w-6xl px-3 sm:px-4">
-        <div class="mt-2 sm:mt-1 h-12 sm:h-14 flex items-center justify-between
+  <!-- blobs background -->
+  <div class="absolute inset-x-0 top-0 -z-10 pointer-events-none">
+    <div
+      class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
+    </div>
+    <div
+      class="absolute top-1/3 -right-24 w-[36rem] h-[36rem] rounded-full bg-purple-400/70 blur-[90px] animate-[floaty_26s_ease-in-out_infinite_alternate]">
+    </div>
+    <div
+      class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
+    </div>
+  </div>
+
+  <!-- Header mobile-->
+  <header id="siteHeader" class="fixed top-0 inset-x-0 z-50" dir="ltr">
+    <div class="mx-auto max-w-6xl px-3 sm:px-4">
+      <div class="mt-2 sm:mt-1 h-12 sm:h-14 flex items-center justify-between
                   rounded-xl sm:rounded-xl
                   border border-white/30 shadow-xl
                   bg-white/10 dark:bg-slate-900/40
                   backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)]">
 
-          <a href="#about" class="px-3 sm:px-4 font-semibold text-sm sm:text-base truncate">
-            Liza Chepurko
-          </a>
+        <a href="#about" class="px-3 sm:px-4 font-semibold text-sm sm:text-base truncate">
+          Liza Chepurko
+        </a>
 
-          <!--desktop navigation-->
-          <nav class="hidden md:block">
-            <ul class="flex items-center gap-4 lg:gap-6 px-3 text-sm lg:text-base">
-              <li><a class="hover:underline transition-all" href="#about">about</a></li>
-              <li><a class="hover:underline transition-all" href="#projects">projects</a></li>
-              <li><a class="hover:underline transition-all" href="#gamedev">game dev</a></li>
-              <li><a class="hover:underline transition-all" href="#arts">arts</a></li>
-            </ul>
-          </nav>
-
-          <!-- hamburger button-->
-          <button id="menuBtn" class="md:hidden p-3 hamburger" aria-expanded="false" aria-controls="mobileMenu">
-            <span class="sr-only">menu</span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-
-        <!-- mobile navigation-->
-        <div id="mobileMenu"
-          class="md:hidden mobile-menu bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-b-xl mt-1 border border-white/20 border-t-0">
-          <nav class="px-4 py-2">
-            <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
-              href="#about">about</a>
-            <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
-              href="#projects">projects</a>
-            <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
-              href="#gamedev">game dev</a>
-            <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
-              href="#arts">arts</a>
-          </nav>
-        </div>
-      </div>
-    </header>
-
-    <!-- spacer -->
-    <div class="h-10 sm:h-12"></div>
-
-
-    <!-- HERO -->
-    <section id="about" class="relative overflow-hidden">
-      <div class="max-w-6xl mx-auto px-4 py-16 sm:py-24 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
-
-        <div class="order-2 md:order-1">
-          <h1 class="mt-10 text-3xl sm:text-5xl font-bold leading-tight">About Me</h1>
-          <p
-            class="mt-2 text-slate-800 dark:text-slate-300 leading-7 sm:leading-8 md:max-w-[80ch] lg:max-w-[95ch] whitespace-pre-line">
-            I'm a third-year Computer Science student who loves turning ideas into reality.
-            With an analytical mindset and a creative spirit, I enjoy building meaningful software that combines logic
-            with imagination.
-            Currently volunteering as a game developer on an educational project for diabetic patients,
-            using gamification to promote health awareness.
-          </p>
-          <p class="mt-6 text-slate-800 font-bold dark:text-slate-300">
-            LANGUAGES: Hebrew, English, Russian
-          </p>
-          <div class="mt-16 flex items-center gap-8">
-            <a href="https://github.com/LizaChepurko" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center hover:opacity-100 opacity-80 transition" aria-label="GitHub">
-              <img src="assets/6214715_github_logo_icon.svg" alt="GitHub" class="w-7 h-7">
-            </a>
-
-            <a href="https://www.linkedin.com/in/liza-chepurko-b69b99302/" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center hover:opacity-100 opacity-80 transition" aria-label="LinkedIn">
-              <img src="assets/6214710_linkedin_logo_icon.svg" alt="LinkedIn" class="w-7 h-7">
-            </a>
-
-            <a href="mailto:lizachep@gmail.com"
-              class="inline-flex items-center gap-2 hover:opacity-100 opacity-80 transition" aria-label="Email">
-              <img src="assets/6214722_email_envelope_gmail_letter_logo_icon.svg" alt="" class="w-7 h-7">
-              <span class="text-sm">lizachep@gmail.com</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="order-1 md:order-2 flex flex-col items-center md:items-end gap-4">
-          <div class="w-60 h-60 md:w-80 md:h-80 rounded-full overflow-hidden bg-slate-300/70 shadow-xl">
-            <img src="assets/WhatsApp Image 2025-09-02 at 20.29.58.jpeg" alt="Liza Chepurko"
-              class="w-full h-full object-cover">
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="py-24">
-      <div class="max-w-3xl mx-auto px-4" dir="ltr">
-        <h2 class="text-3xl font-bold text-center">Education</h2>
-
-        <dl class="mt-8 grid grid-cols-[130px_1fr] md:grid-cols-[160px_1fr] gap-x-8 gap-y-8">
-
-          <dt class="text-amber-700 font-semibold text-lg md:text-xl">2015–2018</dt>
-          <dd class="text-slate-900 dark:text-slate-300 leading-relaxed">
-            <p class="font-medium">“Yitzhak Shamir” High School. Graduated with excellence.</p>
-            <p class="font-medium">
-              Bagrut certificate: Majoring Biology and Social Science.
-              5 units of English and Mathematics.
-            </p>
-          </dd>
-
-          <dt class="text-amber-700 font-semibold text-lg md:text-xl">2022–2025</dt>
-          <dd class="text-slate-900 dark:text-slate-300 leading-relaxed">
-            <p class="font-medium">Third year B.Sc student of Computer Science,</p>
-            <p class="font-medium">Ariel University</p>
-          </dd>
-        </dl>
-      </div>
-    </section>
-
-    <!-- Key Courses -->
-    <section id="courses" class="py-16">
-      <div class="max-w-5xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center">Key Courses</h2>
-
-        <div class="mt-8 space-y-5">
-          <!--line 1-->
-          <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Object
-                Oriented</span></li>
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Data
-                Structures</span></li>
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Databases</span>
-            </li>
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Software
-                engineering</span></li>
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Communication
-                and networking</span></li>
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Algorithms</span>
-            </li>
+        <!--desktop navigation-->
+        <nav class="hidden md:block">
+          <ul class="flex items-center gap-4 lg:gap-6 px-3 text-sm lg:text-base">
+            <li><a class="hover:underline transition-all" href="#about">about</a></li>
+            <li><a class="hover:underline transition-all" href="#projects">projects</a></li>
+            <li><a class="hover:underline transition-all" href="#gamedev">game dev</a></li>
+            <li><a class="hover:underline transition-all" href="#arts">arts</a></li>
           </ul>
-          </ul>
+        </nav>
 
-          <!--line 2-->
-          <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Operating
-                systems</span></li>
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Game
-                Development</span></li>
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Space
-                Engineering</span></li>
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Topics
-                in Computer Vision</span></li>
-          </ul>
-
-          <!--line 3-->
-          <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Computer
-                Architecture</span></li>
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">++C</span>
-            </li>
-            <li><span
-                class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Data
-                compression</span></li>
-          </ul>
-        </div>
+        <!-- hamburger button-->
+        <button id="menuBtn" class="md:hidden p-3 hamburger" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="sr-only">menu</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </section>
 
-    <!-- Programming Skills and Tools -->
-    <section id="skills-tools" class="relative overflow-hidden py-16" dir="ltr">
+      <!-- mobile navigation-->
+      <div id="mobileMenu"
+        class="md:hidden mobile-menu bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-b-xl mt-1 border border-white/20 border-t-0">
+        <nav class="px-4 py-2">
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#about">about</a>
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#projects">projects</a>
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#gamedev">game dev</a>
+          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#arts">arts</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider uppercase">
-          Programming Skills and Tools
-        </h2>
+  <!-- spacer -->
+  <div class="h-10 sm:h-12"></div>
 
-        <p class="mt-10 md:mt-20 text-lg leading-8 text-center">
-          Java, Python, Linux (Ubuntu OS), Git, PyTorch, Wireshark, C, C#, C++, SQL &amp; MongoDB, Firebase,
-          Unity, ChatGPT and Android Studio
+
+  <!-- HERO -->
+  <section id="about" class="relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 py-16 sm:py-24 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
+
+      <div class="order-2 md:order-1">
+        <h1 class="mt-10 text-3xl sm:text-5xl font-bold leading-tight">About Me</h1>
+        <p
+          class="mt-2 text-slate-800 dark:text-slate-300 leading-7 sm:leading-8 md:max-w-[80ch] lg:max-w-[95ch] whitespace-pre-line">
+          I'm a third-year Computer Science student who loves turning ideas into reality.
+          With an analytical mindset and a creative spirit, I enjoy building meaningful software that combines logic
+          with imagination.
+          Currently volunteering as a game developer on an educational project for diabetic patients,
+          using gamification to promote health awareness.
         </p>
+        <p class="mt-6 text-slate-800 font-bold dark:text-slate-300">
+          LANGUAGES: Hebrew, English, Russian
+        </p>
+        <div class="mt-16 flex items-center gap-8">
+          <a href="https://github.com/LizaChepurko" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center hover:opacity-100 opacity-80 transition" aria-label="GitHub">
+            <img src="assets/6214715_github_logo_icon.svg" alt="GitHub" class="w-7 h-7">
+          </a>
+
+          <a href="https://www.linkedin.com/in/liza-chepurko-b69b99302/" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center hover:opacity-100 opacity-80 transition" aria-label="LinkedIn">
+            <img src="assets/6214710_linkedin_logo_icon.svg" alt="LinkedIn" class="w-7 h-7">
+          </a>
+
+          <a href="mailto:lizachep@gmail.com"
+            class="inline-flex items-center gap-2 hover:opacity-100 opacity-80 transition" aria-label="Email">
+            <img src="assets/6214722_email_envelope_gmail_letter_logo_icon.svg" alt="" class="w-7 h-7">
+            <span class="text-sm">lizachep@gmail.com</span>
+          </a>
+        </div>
       </div>
-    </section>
 
-    <!-- Chosen Projects -->
-    <section id="projects" class="py-16" dir="ltr">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center">Projects</h2>
-        <section class="py-3"></section>
-        <ul class="mt-8 sm:mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-          <!-- 1) OOP – Chess game -->
-          <a href="https://github.com/LizaChepurko/OOP1" target="_blank" rel="noopener"
-            class="block w-full max-w-[320px] shadow-2xl">
-            <article
-              class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-              <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-                <img src="assets/Screenshot 2025-08-20 163037.png" loading="lazy" alt="Artwork 1">
-              </div>
-              <h3 class="mt-3 text-center text-sm">Viking Chess</h3>
-              <p class="text-sm text-slate-800 text-center dark:text-slate-800">Oop project in Java</p>
-            </article>
-          </a>
+      <div class="order-1 md:order-2 flex flex-col items-center md:items-end gap-4">
+        <div class="w-60 h-60 md:w-80 md:h-80 rounded-full overflow-hidden bg-slate-300/70 shadow-xl">
+          <img src="assets/WhatsApp Image 2025-09-02 at 20.29.58.jpeg" alt="Liza Chepurko"
+            class="w-full h-full object-cover">
+        </div>
+      </div>
 
-          <!-- 2) Operating systems -->
-          <a href="https://github.com/LizaChepurko/Operating_Systems_FinalProject/blob/main/README.pdf" target="_blank"
-            rel="noopener" class="block w-full max-w-[320px] shadow-2xl">
-            <article
-              class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-              <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-                <img src="assets/Screenshot 2025-08-20 164236.png" loading="lazy" alt="Artwork 1">
-              </div>
-              <h3 class="mt-4 text-center text-sm">Operating Systems - MST solver server</h3>
-              <p class="mt-2 text-sm text-slate-800 text-center dark:text-slate-800">User enters a graph arrangement and
-                receives the MST from the server </p>
-            </article>
-          </a>
+    </div>
+  </section>
 
-          <!-- 3) Catan -->
-          <a href="https://github.com/LizaChepurko/Catan/blob/main/README%20.pdf" target="_blank" rel="noopener"
-            class="block w-full max-w-[320px] shadow-2xl">
-            <article
-              class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-              <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-                <img src="assets/Screenshot 2025-08-20 143257.png" loading="lazy" alt="Artwork 1">
-              </div>
-              <h3 class="mt-3 text-center text-sm">Catan</h3>
-              <p class="mt-4 text-sm text-slate-800 text-center dark:text-slate-800">Catan game logic in C++ including a
-                board based on a graph structure</p>
-            </article>
-          </a>
+  <!-- Education -->
+  <section id="education" class="py-24">
+    <div class="max-w-3xl mx-auto px-4" dir="ltr">
+      <h2 class="text-3xl font-bold text-center">Education</h2>
 
-          <!-- 4) Volunteering app -->
-          <a href="https://github.com/AidLink-app/AidLink-Volunteering-app" target="_blank" rel="noopener"
-            class="block w-full max-w-[320px] shadow-2xl">
-            <article
-              class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-              <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-                <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110"
-                  autoplay loop muted playsinline>
-                  <source src="assets/WhatsApp Video 2025-08-20 at 14.13.56.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <h3 class="mt-3 text-center text-sm">Volunteering app</h3>
-              <p class="mt-2 text-sm text-slate-800 text-center dark:text-slate-800">An application developed as part of
-                a
-                software engineering course. Connects volunteers with organizers</p>
-            </article>
-          </a>
+      <dl class="mt-8 grid grid-cols-[130px_1fr] md:grid-cols-[160px_1fr] gap-x-8 gap-y-8">
 
-          <!-- 5) Space engineering final project -->
-          <a href="https://github.com/LizaChepurko/Target-tracker" target="_blank" rel="noopener"
-            class="block w-full max-w-[320px] shadow-2xl">
-            <article
-              class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
-              <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-                <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110"
-                  autoplay loop muted playsinline>
-                  <source src="assets/457015830-8916909f-8696-48e9-b0c6-2cf88fb790ca.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <h3 class="mt-3 text-center text-sm">Space engineering final project</h3>
-              <p class="mt-1 text-sm text-slate-800 text-center dark:text-slate-800">A Python tool to generate animated
-                Google Earth KML files and simulate a camera fly‐along that “watches” targets.</p>
-            </article>
-          </a>
+        <dt class="text-amber-700 font-semibold text-lg md:text-xl">2015–2018</dt>
+        <dd class="text-slate-900 dark:text-slate-300 leading-relaxed">
+          <p class="font-medium">“Yitzhak Shamir” High School. Graduated with excellence.</p>
+          <p class="font-medium">
+            Bagrut certificate: Majoring Biology and Social Science.
+            5 units of English and Mathematics.
+          </p>
+        </dd>
 
-          <article class="self-start h-auto w-full max-w-[320px] rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30
-         transition-transform duration-300 hover:scale-[1.03] shadow-2xl">
-            <h3 class="font-semibold mb-3">See More Projects</h3>
-            <ul class="list-disc pl-5 space-y-1 text-sm">
-              <li>
-                <a class="underline underline-offset-4 hover:opacity-40"
-                  href="https://github.com/LizaChepurko/Assignment2" target="_blank">
-                  Projects in C
-                </a>
-              </li>
-              <li>
-                <a class="underline underline-offset-4 hover:opacity-40"
-                  href="https://github.com/LizaChepurko/N-Ary-Tree-Iterators" target="_blank">
-                  More projects in C++
-                </a>
-              </li>
-              <li>
-                <a class="underline underline-offset-4 hover:opacity-40" href="https://github.com/LizaChepurko/OOP2"
-                  target="_blank">
-                  OOP small social network
-                </a>
-              </li>
-              <li>
-                <a class="underline underline-offset-4 hover:opacity-40" href="files/פרויקט סיום רשתות תקשורת 2024.pdf"
-                  download="Network-Protocol-Design.pdf">
-                  Network protocol design
-                </a>
-              </li>
-            </ul>
+        <dt class="text-amber-700 font-semibold text-lg md:text-xl">2022–2025</dt>
+        <dd class="text-slate-900 dark:text-slate-300 leading-relaxed">
+          <p class="font-medium">Third year B.Sc student of Computer Science,</p>
+          <p class="font-medium">Ariel University</p>
+        </dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Key Courses -->
+  <section id="courses" class="py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center">Key Courses</h2>
+
+      <div class="mt-8 space-y-5">
+        <!--line 1-->
+        <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Object
+              Oriented</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Data
+              Structures</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Databases</span>
+          </li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Software
+              engineering</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Communication
+              and networking</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Algorithms</span>
+          </li>
+        </ul>
+        </ul>
+
+        <!--line 2-->
+        <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Operating
+              systems</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Game
+              Development</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Space
+              Engineering</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Topics
+              in Computer Vision</span></li>
+        </ul>
+
+        <!--line 3-->
+        <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Computer
+              Architecture</span></li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">++C</span>
+          </li>
+          <li><span
+              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Data
+              compression</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programming Skills and Tools -->
+  <section id="skills-tools" class="relative overflow-hidden py-16" dir="ltr">
+
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider uppercase">
+        Programming Skills and Tools
+      </h2>
+
+      <p class="mt-10 md:mt-20 text-lg leading-8 text-center">
+        Java, Python, Linux (Ubuntu OS), Git, PyTorch, Wireshark, C, C#, C++, SQL &amp; MongoDB, Firebase,
+        Unity, ChatGPT and Android Studio
+      </p>
+    </div>
+  </section>
+
+  <!-- Chosen Projects -->
+  <section id="projects" class="py-16" dir="ltr">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center">Projects</h2>
+      <section class="py-3"></section>
+      <ul class="mt-8 sm:mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <!-- 1) OOP – Chess game -->
+        <a href="https://github.com/LizaChepurko/OOP1" target="_blank" rel="noopener"
+          class="block w-full max-w-[320px] shadow-2xl">
+          <article
+            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+              <img src="assets/Screenshot 2025-08-20 163037.png" loading="lazy" alt="Artwork 1">
+            </div>
+            <h3 class="mt-3 text-center text-sm">Viking Chess</h3>
+            <p class="text-sm text-slate-800 text-center dark:text-slate-800">Oop project in Java</p>
           </article>
-      </div>
-  </div>
+        </a>
+
+        <!-- 2) Operating systems -->
+        <a href="https://github.com/LizaChepurko/Operating_Systems_FinalProject/blob/main/README.pdf" target="_blank"
+          rel="noopener" class="block w-full max-w-[320px] shadow-2xl">
+          <article
+            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+              <img src="assets/Screenshot 2025-08-20 164236.png" loading="lazy" alt="Artwork 1">
+            </div>
+            <h3 class="mt-4 text-center text-sm">Operating Systems - MST solver server</h3>
+            <p class="mt-2 text-sm text-slate-800 text-center dark:text-slate-800">User enters a graph arrangement and
+              receives the MST from the server </p>
+          </article>
+        </a>
+
+        <!-- 3) Catan -->
+        <a href="https://github.com/LizaChepurko/Catan/blob/main/README%20.pdf" target="_blank" rel="noopener"
+          class="block w-full max-w-[320px] shadow-2xl">
+          <article
+            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+              <img src="assets/Screenshot 2025-08-20 143257.png" loading="lazy" alt="Artwork 1">
+            </div>
+            <h3 class="mt-3 text-center text-sm">Catan</h3>
+            <p class="mt-4 text-sm text-slate-800 text-center dark:text-slate-800">Catan game logic in C++ including a
+              board based on a graph structure</p>
+          </article>
+        </a>
+
+        <!-- 4) Volunteering app -->
+        <a href="https://github.com/AidLink-app/AidLink-Volunteering-app" target="_blank" rel="noopener"
+          class="block w-full max-w-[320px] shadow-2xl">
+          <article
+            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+              <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" autoplay
+                loop muted playsinline>
+                <source src="assets/WhatsApp Video 2025-08-20 at 14.13.56.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <h3 class="mt-3 text-center text-sm">Volunteering app</h3>
+            <p class="mt-2 text-sm text-slate-800 text-center dark:text-slate-800">An application developed as part of a
+              software engineering course. Connects volunteers with organizers</p>
+          </article>
+        </a>
+
+        <!-- 5) Space engineering final project -->
+        <a href="https://github.com/LizaChepurko/Target-tracker" target="_blank" rel="noopener"
+          class="block w-full max-w-[320px] shadow-2xl">
+          <article
+            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+              <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" autoplay
+                loop muted playsinline>
+                <source src="assets/457015830-8916909f-8696-48e9-b0c6-2cf88fb790ca.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <h3 class="mt-3 text-center text-sm">Space engineering final project</h3>
+            <p class="mt-1 text-sm text-slate-800 text-center dark:text-slate-800">A Python tool to generate animated
+              Google Earth KML files and simulate a camera fly‐along that “watches” targets.</p>
+          </article>
+        </a>
+
+        <article class="self-start h-auto w-full max-w-[320px] rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30
+         transition-transform duration-300 hover:scale-[1.03] shadow-2xl">
+          <h3 class="font-semibold mb-3">See More Projects</h3>
+          <ul class="list-disc pl-5 space-y-1 text-sm">
+            <li>
+              <a class="underline underline-offset-4 hover:opacity-40"
+                href="https://github.com/LizaChepurko/Assignment2" target="_blank">
+                Projects in C
+              </a>
+            </li>
+            <li>
+              <a class="underline underline-offset-4 hover:opacity-40"
+                href="https://github.com/LizaChepurko/N-Ary-Tree-Iterators" target="_blank">
+                More projects in C++
+              </a>
+            </li>
+            <li>
+              <a class="underline underline-offset-4 hover:opacity-40" href="https://github.com/LizaChepurko/OOP2"
+                target="_blank">
+                OOP small social network
+              </a>
+            </li>
+            <li>
+              <a class="underline underline-offset-4 hover:opacity-40" href="files/פרויקט סיום רשתות תקשורת 2024.pdf"
+                download="Network-Protocol-Design.pdf">
+                Network protocol design
+              </a>
+            </li>
+          </ul>
+        </article>
+    </div>
+    </div>
   </section>
 
   <section id="projects" class="py-16" dir="ltr">
