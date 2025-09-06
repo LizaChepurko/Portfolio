@@ -28,6 +28,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="door-anim.js" defer></script>
   <script src="candy-anim.js" defer></script>
+  <script src="type.js" defer></script>
   <script src="menu.js" defer></script>
   <script>
     // Tailwind config: map font-mono to our fonts
@@ -44,6 +45,7 @@
     }
   </script>
   <script src="parallax.js" defer></script>
+
 
 </head>
 <!-- Header -->
@@ -118,9 +120,36 @@
     <div class="max-w-6xl mx-auto px-4 py-10 sm:py-12 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
 
       <div class="order-2 md:order-1">
-        <h1 class="mt-10 text-[#A200FF] text-3xl sm:text-5xl font-bold leading-tight">About Me</h1>
-        <p
-          class="mt-2 text-slate-800 dark:text-slate-300 leading-7 sm:leading-8 md:max-w-[80ch] lg:max-w-[95ch] whitespace-pre-line text-white">
+        <div class="flex items-center gap-5 mt-14">
+          <h1 class="relative z-10 text-[#FFD93D] text-3xl sm:text-5xl font-bold leading-tight">
+            About Me
+          </h1>
+          <img src="assets/cat.png" alt="Cat" class="w-22 h-23 sm:w-24 sm:h-25 select-none animate-float z-0"
+            draggable="false" />
+          <style>
+            @keyframes float {
+              0% {
+                transform: translateY(0px);
+              }
+
+              50% {
+                transform: translateY(-15px);
+              }
+
+              100% {
+                transform: translateY(0px);
+              }
+            }
+
+            .animate-float {
+              animation: float 4s ease-in-out infinite;
+            }
+            
+          </style>
+
+        </div>
+
+        <p class="mt-2 leading-7 sm:leading-8 md:max-w-[80ch] lg:max-w-[95ch] whitespace-pre-line text-white">
           I'm a third-year Computer Science student who loves turning ideas into reality.
           With an analytical mindset and a creative spirit, I enjoy building meaningful software that combines logic
           with imagination.
@@ -154,8 +183,47 @@
           <img src="assets/WhatsApp Image 2025-09-02 at 20.29.58.jpeg" alt="Liza Chepurko"
             class="w-full h-full object-cover">
         </div>
-      </div>
+        <h2 id="typing" dir="ltr" class="text-white py-4 sm:py-6 text-xl sm:text-2xl font-bold text-center"></h2>
 
+        <script>
+          const texts = [
+            "Logic meets imagination ✨",
+            "From pixels to projects 🚀",
+            "Welcome to my portfolio!"
+          ];
+
+          let textIndex = 0;
+          let charIndex = 0;
+          let isDeleting = false;
+          const speed = 75;
+          const deleteSpeed = 50;
+          const delayBetween = 900;
+          const el = document.getElementById("typing");
+
+          function typeLoop() {
+            const current = texts[textIndex];
+            if (!isDeleting) {
+              el.textContent = current.substring(0, charIndex + 1);
+              charIndex++;
+              if (charIndex === current.length) {
+                isDeleting = true;
+                setTimeout(typeLoop, delayBetween);
+                return;
+              }
+            } else {
+              el.textContent = current.substring(0, charIndex - 1);
+              charIndex--;
+              if (charIndex === 1) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+              }
+            }
+            setTimeout(typeLoop, isDeleting ? deleteSpeed : speed);
+          }
+          typeLoop();
+        </script>
+      </div>
+    </div>
     </div>
   </section>
 
@@ -198,22 +266,22 @@
         <!--line 1-->
         <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Object
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Object
               Oriented</span></li>
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Data
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Data
               Structures</span></li>
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Databases</span>
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Databases</span>
           </li>
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Software
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Software
               engineering</span></li>
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Communication
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Communication
               and networking</span></li>
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Algorithms</span>
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Algorithms</span>
           </li>
         </ul>
         </ul>
@@ -221,29 +289,29 @@
         <!--line 2-->
         <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Operating
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Operating
               systems</span></li>
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Game
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Game
               Development</span></li>
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Space
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Space
               Engineering</span></li>
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Topics
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Topics
               in Computer Vision</span></li>
         </ul>
 
         <!--line 3-->
         <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Computer
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Computer
               Architecture</span></li>
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">++C</span>
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">++C</span>
           </li>
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Data
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Data
               compression</span></li>
         </ul>
       </div>
@@ -285,7 +353,7 @@
               <img src="assets/Screenshot 2025-08-20 163037.png" loading="lazy" alt="Artwork 1">
             </div>
             <h3 class="mt-3 text-center text-sm text-[#FFD93D]">Viking Chess</h3>
-            <p class="text-sm text-slate-800 text-center dark:text-slate-800 text-white">Oop project in Java</p>
+            <p class="text-sm text-center text-white">Oop project in Java</p>
           </article>
         </a>
 
@@ -298,7 +366,7 @@
               <img src="assets/Screenshot 2025-08-20 164236.png" loading="lazy" alt="Artwork 1">
             </div>
             <h3 class="mt-4 text-center text-sm text-[#FFD93D]">Operating Systems - MST solver server</h3>
-            <p class="mt-2 text-sm text-slate-800 text-center dark:text-slate-800 text-white">User enters a graph
+            <p class="mt-2 text-sm text-center text-white">User enters a graph
               arrangement and
               receives the MST from the server </p>
           </article>
@@ -313,7 +381,7 @@
               <img src="assets/Screenshot 2025-08-20 143257.png" loading="lazy" alt="Artwork 1">
             </div>
             <h3 class="mt-3 text-center text-sm text-[#FFD93D]">Catan</h3>
-            <p class="mt-4 text-sm text-slate-800 text-center dark:text-slate-800 text-white">Catan game logic in C++
+            <p class="mt-4 text-sm text-center text-white">Catan game logic in C++
               including a
               board based on a graph structure</p>
           </article>
@@ -331,7 +399,7 @@
               </video>
             </div>
             <h3 class="mt-3 text-center text-sm text-[#FFD93D] ">Volunteering app</h3>
-            <p class="mt-2 text-sm text-slate-800 text-center dark:text-slate-800 text-white">An application developed
+            <p class="mt-2 text-sm text-center text-white">An application developed
               as part of a
               software engineering course. Connects volunteers with organizers</p>
           </article>
@@ -349,7 +417,7 @@
               </video>
             </div>
             <h3 class="mt-3 text-center text-sm text-[#FFD93D] ">Space engineering final project</h3>
-            <p class="mt-1 text-sm text-slate-800 text-center dark:text-slate-800 text-white">A Python tool to generate
+            <p class="mt-1 text-sm text-center text-white">A Python tool to generate
               animated
               Google Earth KML files and simulate a camera fly‐along that “watches” targets.</p>
           </article>
@@ -402,7 +470,7 @@
             </video>
           </div>
           <h3 class="mt-3 text-center text-lg font-semibold text-[#FFD93D]">Thankful Master</h3>
-          <p class="text-sm text-slate-800 text-center dark:text-slate-300 mt-2 text-white">
+          <p class="text-sm text-center mt-2 text-white">
             currently in development. A simple app that helps you practice daily gratitude.
             Count your "thankful moments," reflect on the little things,
             and track your progress toward a more positive mindset.
@@ -523,7 +591,7 @@
           <div class="p-4">
             <div class="flex items-center justify-between gap-3">
               <h3 class="font-semibold text-lg text-[#FFD93D]">Science Illustration • Biomimicry</h3>
-              <span class="text-[11px] text-sm px-2 py-1 rounded-full border bg-white/60 dark:bg-slate-900/40
+              <span class="text-[17px] text-sm px-2 py-1 rounded-full bg-white/40
                whitespace-nowrap shrink-0 leading-tight">
                 Client Work
               </span>

@@ -42,4 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
     (mql.addEventListener || mql.addListener).call(mql, 'change' in mql ? 'change' : (cb => mql.addListener(cb)), (e) => {
         if (e.matches) closeMenu();
     });
+    
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Typed('#typed', {
+    strings: [
+      "Logic meets imagination ✨",
+      "From pixels to projects 🚀",
+      "Welcome to my portfolio!"
+    ],
+    typeSpeed: 40,
+    backSpeed: 25,
+    loop: true
+  });
+});
+
