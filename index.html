@@ -43,23 +43,20 @@
       }
     }
   </script>
+  <script src="parallax.js" defer></script>
 
 </head>
 <!-- Header -->
 
-<body
-  class="font-mono min-h-screen bg-[linear-gradient(180deg,#FFF8F8_0%,#B7BCFF_20%,#DF6BFF_40%,#700C8B_60%,#34007D_100%)] text-slate-900 dark:text-slate-100 relative">
+<body class="font-mono min-h-screen bg-[#2C0C42] text-slate-900 dark:text-slate-100 relative">
 
   <!-- blobs background -->
-  <div class="absolute inset-x-0 top-0 -z-10 pointer-events-none">
+  <div class="absolute inset-x-0 top-0 h-screen -z-10 pointer-events-none" data-parallax-speed="0.5">
     <div
-      class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
+      class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-[#A200FF]/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
     </div>
     <div
-      class="absolute top-1/3 -right-24 w-[36rem] h-[36rem] rounded-full bg-purple-400/70 blur-[90px] animate-[floaty_26s_ease-in-out_infinite_alternate]">
-    </div>
-    <div
-      class="absolute -top-5 -left-24 w-[15rem] h-[15rem] rounded-full bg-sky-400/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
+      class="absolute top-100 -right-24 w-[30rem] h-[30rem] rounded-full bg-[#A200FF]/70 blur-[90px] animate-[floaty_26s_ease-in-out_infinite_alternate]">
     </div>
   </div>
 
@@ -72,13 +69,13 @@
                   bg-white/10 dark:bg-slate-900/40
                   backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)]">
 
-        <a href="#about" class="px-3 sm:px-4 font-semibold text-sm sm:text-base truncate">
+        <a href="#about" class="px-3 sm:px-4 font-semibold text-sm sm:text-base truncate text-white">
           Liza Chepurko
         </a>
 
         <!--desktop navigation-->
         <nav class="hidden md:block">
-          <ul class="flex items-center gap-4 lg:gap-6 px-3 text-sm lg:text-base">
+          <ul class="flex items-center gap-4 lg:gap-6 px-3 text-sm lg:text-base text-white">
             <li><a class="hover:underline transition-all" href="#about">about</a></li>
             <li><a class="hover:underline transition-all" href="#projects">projects</a></li>
             <li><a class="hover:underline transition-all" href="#gamedev">game dev</a></li>
@@ -117,20 +114,20 @@
 
 
   <!-- HERO -->
-  <section id="about" class="relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 py-16 sm:py-24 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
+  <section id="about" class="relative overflow-hidden" data-parallax-speed="1.6">
+    <div class="max-w-6xl mx-auto px-4 py-10 sm:py-12 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
 
       <div class="order-2 md:order-1">
-        <h1 class="mt-10 text-3xl sm:text-5xl font-bold leading-tight">About Me</h1>
+        <h1 class="mt-10 text-[#A200FF] text-3xl sm:text-5xl font-bold leading-tight">About Me</h1>
         <p
-          class="mt-2 text-slate-800 dark:text-slate-300 leading-7 sm:leading-8 md:max-w-[80ch] lg:max-w-[95ch] whitespace-pre-line">
+          class="mt-2 text-slate-800 dark:text-slate-300 leading-7 sm:leading-8 md:max-w-[80ch] lg:max-w-[95ch] whitespace-pre-line text-white">
           I'm a third-year Computer Science student who loves turning ideas into reality.
           With an analytical mindset and a creative spirit, I enjoy building meaningful software that combines logic
           with imagination.
           Currently volunteering as a game developer on an educational project for diabetic patients,
           using gamification to promote health awareness.
         </p>
-        <p class="mt-6 text-slate-800 font-bold dark:text-slate-300">
+        <p class="mt-6 font-bold text-[#A200FF]">
           LANGUAGES: Hebrew, English, Russian
         </p>
         <div class="mt-16 flex items-center gap-8">
@@ -147,7 +144,7 @@
           <a href="mailto:lizachep@gmail.com"
             class="inline-flex items-center gap-2 hover:opacity-100 opacity-80 transition" aria-label="Email">
             <img src="assets/6214722_email_envelope_gmail_letter_logo_icon.svg" alt="" class="w-7 h-7">
-            <span class="text-sm">lizachep@gmail.com</span>
+            <span class="text-s text-[#00CAFF]">lizachep@gmail.com</span>
           </a>
         </div>
       </div>
@@ -163,14 +160,22 @@
   </section>
 
   <!-- Education -->
-  <section id="education" class="py-24">
+  <section id="education" class="py-24" data-parallax-speed="1.2">
+    <div class="pointer-events-none absolute inset-0 -z-10" data-parallax-speed="0.65">
+      <div
+        class="absolute bottom-[-4rem] left-1/4 w-[14rem] h-[14rem] rounded-full bg-[#FFA600]/40 blur-[90px] animate-[floaty_24s_ease-in-out_infinite_alternate]">
+      </div>
+      <div
+        class="absolute bottom-[-4rem]  top-1/3 right-1/4 w-[14rem] h-[14rem] rounded-full bg-[#FFA600]/40 blur-[90px] animate-[floaty_24s_ease-in-out_infinite_alternate]">
+      </div>
+    </div>
     <div class="max-w-3xl mx-auto px-4" dir="ltr">
-      <h2 class="text-3xl font-bold text-center">Education</h2>
+      <h2 class="text-3xl text-[#A200FF] font-bold text-center">Education</h2>
 
       <dl class="mt-8 grid grid-cols-[130px_1fr] md:grid-cols-[160px_1fr] gap-x-8 gap-y-8">
 
-        <dt class="text-amber-700 font-semibold text-lg md:text-xl">2015–2018</dt>
-        <dd class="text-slate-900 dark:text-slate-300 leading-relaxed">
+        <dt class="text-[#FFA600] font-semibold text-lg md:text-xl">2015–2018</dt>
+        <dd class="text-slate-900 dark:text-slate-300 leading-relaxed text-white">
           <p class="font-medium">“Yitzhak Shamir” High School. Graduated with excellence.</p>
           <p class="font-medium">
             Bagrut certificate: Majoring Biology and Social Science.
@@ -178,8 +183,8 @@
           </p>
         </dd>
 
-        <dt class="text-amber-700 font-semibold text-lg md:text-xl">2022–2025</dt>
-        <dd class="text-slate-900 dark:text-slate-300 leading-relaxed">
+        <dt class="text-[#FFA600] font-semibold text-lg md:text-xl">2022–2025</dt>
+        <dd class="text-slate-900 dark:text-slate-300 leading-relaxed text-white">
           <p class="font-medium">Third year B.Sc student of Computer Science,</p>
           <p class="font-medium">Ariel University</p>
         </dd>
@@ -188,30 +193,30 @@
   </section>
 
   <!-- Key Courses -->
-  <section id="courses" class="py-16">
+  <section id="courses" class="py-16" data-parallax-speed="1.2">
     <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center">Key Courses</h2>
+      <h2 class="text-3xl text-[#A200FF] font-bold text-center">Key Courses</h2>
 
       <div class="mt-8 space-y-5">
         <!--line 1-->
         <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Object
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Object
               Oriented</span></li>
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Data
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Data
               Structures</span></li>
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Databases</span>
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Databases</span>
           </li>
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Software
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Software
               engineering</span></li>
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Communication
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Communication
               and networking</span></li>
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Algorithms</span>
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Algorithms</span>
           </li>
         </ul>
         </ul>
@@ -219,29 +224,29 @@
         <!--line 2-->
         <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Operating
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Operating
               systems</span></li>
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Game
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Game
               Development</span></li>
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Space
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Space
               Engineering</span></li>
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Topics
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Topics
               in Computer Vision</span></li>
         </ul>
 
         <!--line 3-->
         <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Computer
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Computer
               Architecture</span></li>
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">++C</span>
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">++C</span>
           </li>
           <li><span
-              class="inline-block rounded-full border border-slate-400/60 dark:border-slate-500/60 px-5 py-2 text-sm font-medium bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition">Data
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm text-slate-800 dark:text-slate-200 hover:-translate-y-1 transition text-white">Data
               compression</span></li>
         </ul>
       </div>
@@ -249,14 +254,14 @@
   </section>
 
   <!-- Programming Skills and Tools -->
-  <section id="skills-tools" class="relative overflow-hidden py-16" dir="ltr">
+  <section id="skills-tools" class="relative overflow-hidden py-16" dir="ltr" data-parallax-speed="1.2">
 
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider uppercase">
+      <h2 class="text-2xl text-[#A200FF] sm:text-3xl md:text-4xl font-extrabold tracking-wider uppercase">
         Programming Skills and Tools
       </h2>
 
-      <p class="mt-10 md:mt-20 text-lg leading-8 text-center">
+      <p class="mt-10 md:mt-20 text-lg leading-8 text-center text-white">
         Java, Python, Linux (Ubuntu OS), Git, PyTorch, Wireshark, C, C#, C++, SQL &amp; MongoDB, Firebase,
         Unity, ChatGPT and Android Studio
       </p>
@@ -264,21 +269,26 @@
   </section>
 
   <!-- Chosen Projects -->
-  <section id="projects" class="py-16" dir="ltr">
+  <section id="projects" class="py-16" dir="ltr" data-parallax-speed="1.2">
+    <div class="pointer-events-none absolute inset-0 -z-10" data-parallax-speed="0.65">
+      <div
+        class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-[#A200FF]/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
+      </div>
+    </div>
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center">Projects</h2>
+      <h2 class="text-3xl text-[#A200FF] font-bold text-center">Projects</h2>
       <section class="py-3"></section>
       <ul class="mt-8 sm:mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
         <!-- 1) OOP – Chess game -->
         <a href="https://github.com/LizaChepurko/OOP1" target="_blank" rel="noopener"
           class="block w-full max-w-[320px] shadow-2xl">
           <article
-            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            class="h-full rounded-2xl p-2 bg-white/20 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
             <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
               <img src="assets/Screenshot 2025-08-20 163037.png" loading="lazy" alt="Artwork 1">
             </div>
-            <h3 class="mt-3 text-center text-sm">Viking Chess</h3>
-            <p class="text-sm text-slate-800 text-center dark:text-slate-800">Oop project in Java</p>
+            <h3 class="mt-3 text-center text-sm text-[#FFD93D]">Viking Chess</h3>
+            <p class="text-sm text-slate-800 text-center dark:text-slate-800 text-white">Oop project in Java</p>
           </article>
         </a>
 
@@ -286,12 +296,13 @@
         <a href="https://github.com/LizaChepurko/Operating_Systems_FinalProject/blob/main/README.pdf" target="_blank"
           rel="noopener" class="block w-full max-w-[320px] shadow-2xl">
           <article
-            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            class="h-full rounded-2xl p-2 bg-white/20 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
             <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
               <img src="assets/Screenshot 2025-08-20 164236.png" loading="lazy" alt="Artwork 1">
             </div>
-            <h3 class="mt-4 text-center text-sm">Operating Systems - MST solver server</h3>
-            <p class="mt-2 text-sm text-slate-800 text-center dark:text-slate-800">User enters a graph arrangement and
+            <h3 class="mt-4 text-center text-sm text-[#FFD93D]">Operating Systems - MST solver server</h3>
+            <p class="mt-2 text-sm text-slate-800 text-center dark:text-slate-800 text-white">User enters a graph
+              arrangement and
               receives the MST from the server </p>
           </article>
         </a>
@@ -300,12 +311,13 @@
         <a href="https://github.com/LizaChepurko/Catan/blob/main/README%20.pdf" target="_blank" rel="noopener"
           class="block w-full max-w-[320px] shadow-2xl">
           <article
-            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            class="h-full rounded-2xl p-2 bg-white/20 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
             <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
               <img src="assets/Screenshot 2025-08-20 143257.png" loading="lazy" alt="Artwork 1">
             </div>
-            <h3 class="mt-3 text-center text-sm">Catan</h3>
-            <p class="mt-4 text-sm text-slate-800 text-center dark:text-slate-800">Catan game logic in C++ including a
+            <h3 class="mt-3 text-center text-sm text-[#FFD93D]">Catan</h3>
+            <p class="mt-4 text-sm text-slate-800 text-center dark:text-slate-800 text-white">Catan game logic in C++
+              including a
               board based on a graph structure</p>
           </article>
         </a>
@@ -314,15 +326,16 @@
         <a href="https://github.com/AidLink-app/AidLink-Volunteering-app" target="_blank" rel="noopener"
           class="block w-full max-w-[320px] shadow-2xl">
           <article
-            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            class="h-full rounded-2xl p-2 bg-white/20 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
             <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
               <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" autoplay
                 loop muted playsinline>
                 <source src="assets/WhatsApp Video 2025-08-20 at 14.13.56.mp4" type="video/mp4" />
               </video>
             </div>
-            <h3 class="mt-3 text-center text-sm">Volunteering app</h3>
-            <p class="mt-2 text-sm text-slate-800 text-center dark:text-slate-800">An application developed as part of a
+            <h3 class="mt-3 text-center text-sm text-[#FFD93D] ">Volunteering app</h3>
+            <p class="mt-2 text-sm text-slate-800 text-center dark:text-slate-800 text-white">An application developed
+              as part of a
               software engineering course. Connects volunteers with organizers</p>
           </article>
         </a>
@@ -331,69 +344,71 @@
         <a href="https://github.com/LizaChepurko/Target-tracker" target="_blank" rel="noopener"
           class="block w-full max-w-[320px] shadow-2xl">
           <article
-            class="h-full rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+            class="h-full rounded-2xl p-2 bg-white/20 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
             <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
               <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" autoplay
                 loop muted playsinline>
                 <source src="assets/457015830-8916909f-8696-48e9-b0c6-2cf88fb790ca.mp4" type="video/mp4" />
               </video>
             </div>
-            <h3 class="mt-3 text-center text-sm">Space engineering final project</h3>
-            <p class="mt-1 text-sm text-slate-800 text-center dark:text-slate-800">A Python tool to generate animated
+            <h3 class="mt-3 text-center text-sm text-[#FFD93D] ">Space engineering final project</h3>
+            <p class="mt-1 text-sm text-slate-800 text-center dark:text-slate-800 text-white">A Python tool to generate
+              animated
               Google Earth KML files and simulate a camera fly‐along that “watches” targets.</p>
           </article>
         </a>
 
-        <article class="self-start h-auto w-full max-w-[320px] rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30
+        <article class="self-start h-auto w-full max-w-[320px] rounded-2xl p-2 bg-white/20 dark:bg-slate-900/30
          transition-transform duration-300 hover:scale-[1.03] shadow-2xl">
-          <h3 class="font-semibold mb-3">See More Projects</h3>
+          <h3 class="font-semibold mb-3 text-[#FFD93D]">See More Projects</h3>
           <ul class="list-disc pl-5 space-y-1 text-sm">
             <li>
-              <a class="underline underline-offset-4 hover:opacity-40"
+              <a class="underline underline-offset-4 hover:opacity-40 text-white"
                 href="https://github.com/LizaChepurko/Assignment2" target="_blank">
                 Projects in C
               </a>
             </li>
             <li>
-              <a class="underline underline-offset-4 hover:opacity-40"
+              <a class="underline underline-offset-4 hover:opacity-40 text-white"
                 href="https://github.com/LizaChepurko/N-Ary-Tree-Iterators" target="_blank">
                 More projects in C++
               </a>
             </li>
             <li>
-              <a class="underline underline-offset-4 hover:opacity-40" href="https://github.com/LizaChepurko/OOP2"
-                target="_blank">
+              <a class="underline underline-offset-4 hover:opacity-40 text-white"
+                href="https://github.com/LizaChepurko/OOP2" target="_blank">
                 OOP small social network
               </a>
             </li>
             <li>
-              <a class="underline underline-offset-4 hover:opacity-40" href="files/פרויקט סיום רשתות תקשורת 2024.pdf"
-                download="Network-Protocol-Design.pdf">
+              <a class="underline underline-offset-4 hover:opacity-40 text-white"
+                href="files/פרויקט סיום רשתות תקשורת 2024.pdf" download="Network-Protocol-Design.pdf">
                 Network protocol design
               </a>
             </li>
           </ul>
         </article>
-    </div>
-    </div>
   </section>
 
-  <section id="projects" class="py-16" dir="ltr">
+  <section id="projects" class="py-16" dir="ltr" data-parallax-speed="1.2">
+    <div
+      class="absolute top-100 -right-24 w-[30rem] h-[30rem] rounded-full bg-[#3705AD]/70 blur-[90px] animate-[floaty_26s_ease-in-out_infinite_alternate]">
+    </div>
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center">✨ My App ✨</h2>
+      <h2 class="text-3xl text-[#A200FF] font-bold text-center">✨ My App ✨</h2>
       <section class="py-8"></section>
 
       <div class="flex justify-center">
         <article
-          class="w-full max-w-sm rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+          class="w-full max-w-sm rounded-2xl p-2 bg-white/20 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
           <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
             <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110" autoplay
               loop muted playsinline>
               <source src="assets/thankful.mp4" type="video/mp4" />
             </video>
           </div>
-          <h3 class="mt-3 text-center text-lg font-semibold">Thankful Master</h3>
-          <p class="text-sm text-slate-800 text-center dark:text-slate-300 mt-2">
+          <h3 class="mt-3 text-center text-lg font-semibold text-[#FFD93D]">Thankful Master</h3>
+          <p class="text-sm text-slate-800 text-center dark:text-slate-300 mt-2 text-white">
             currently in development. A simple app that helps you practice daily gratitude.
             Count your "thankful moments," reflect on the little things,
             and track your progress toward a more positive mindset.
@@ -408,7 +423,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <!-- Game Development -->
-  <section id="gamedev" class="py-16" dir="ltr">
+  <section id="gamedev" class="py-16" dir="ltr" data-parallax-speed="1.2">
+    <div class="pointer-events-none absolute inset-0 -z-10" data-parallax-speed="0.65">
+      <div
+        class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-[#A200FF]/50 blur-[100px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
+      </div>
+      <div
+        class="absolute top-80 -right-24 w-[28rem] h-[28rem] rounded-full bg-[#A200FF]/70 blur-[100px] animate-[floaty_26s_ease-in-out_infinite_alternate]">
+      </div>
+    </div>
 
     <div class="max-w-5xl mx-auto px-4">
 
@@ -427,15 +450,15 @@
           <a href="https://lizachep.itch.io/final-game-house" target="_blank" rel="noopener"
             class="block w-full max-w-[320px] shadow-2xl">
             <article
-              class="rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+              class="rounded-2xl p-2 bg-white/20 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
               <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
                 <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110"
                   autoplay loop muted playsinline>
                   <source src="assets/Untitled video - Made with Clipchamp (1).mp4" type="video/mp4" />
                 </video>
               </div>
-              <h3 class="mt-3 text-center text-lg font-semibold">Ready, Set, Go!</h3>
-              <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed">
+              <h3 class="mt-3 text-center text-lg font-semibold text-[#FFD93D]">Ready, Set, Go!</h3>
+              <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed text-white">
                 One of the winners in an inner contest. The game was created specifically for adults with intellectual
                 disabilities and challenges with organization and planning, and promotes independence. The game was
                 developed in collaboration with the Department of Occupational Therapy.
@@ -445,7 +468,7 @@
           <a href="https://lizachep.itch.io/multimotek" target="_blank" rel="noopener"
             class="block w-full max-w-[320px] shadow-2xl">
             <article
-              class="rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+              class="rounded-2xl p-2 bg-white/20 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
               <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
                 <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110"
                   autoplay loop muted playsinline>
@@ -453,8 +476,8 @@
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <h3 class="mt-3 text-center text-lg font-semibold">Multimotek</h3>
-              <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed">
+              <h3 class="mt-3 text-center text-lg font-semibold text-[#FFD93D]">Multimotek</h3>
+              <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed text-white">
                 A volunteer project that I am doing in collaboration with an association for diabetics in Israel
               </p>
             </article>
@@ -464,7 +487,7 @@
           <a href="https://github.com/Liza-Gaming/Jenga_tower" target="_blank" rel="noopener"
             class="block w-full max-w-[320px] shadow-2xl">
             <article
-              class="rounded-2xl p-2 bg-white/40 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
+              class="rounded-2xl p-2 bg-white/20 dark:bg-slate-900/30 transition-transform duration-300 hover:scale-[1.03]">
               <div class="rounded-2xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
                 <video class="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-110"
                   autoplay loop muted playsinline>
@@ -472,15 +495,15 @@
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <h3 class="mt-3 text-center text-lg font-semibold">Jenga Tower</h3>
-              <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed">
+              <h3 class="mt-3 text-center text-lg font-semibold text-[#FFD93D]">Jenga Tower</h3>
+              <p class="mt-2 text-center text-sm text-slate-900 dark:text-slate-500 leading-relaxed text-white">
                 Jenga Tower is a Unity multiplayer mobile 3D game that I designed and built on my own. I started this
                 project as a creative outlet
               </p>
             </article>
           </a>
           <div class="w-full max-w-[320px] text-center ">
-            <p class="text-lg sm:text-xl md:text-xl text-white text-center leading-relaxed"> For all my games you can
+            <p class="pixel text-center text-lg sm:text-l md:text-xl tracking-wide"> For all my games you can
               visit my
               <a href="https://github.com/orgs/Liza-Gaming/repositories" target="_blank" rel="noopener"
                 class="inline-flex flex-col items-center gap-3 text-white font-medium underline decoration-white/60 hover:decoration-white">
@@ -492,29 +515,27 @@
           </div>
         </div>
       </div>
-    </div>
-    </div>
   </section>
 
   <!-- Arts -->
-  <section id="arts" class="relative py-16" dir="ltr">
+  <section id="arts" class="relative py-8" dir="ltr" data-parallax-speed="1.2">
 
     <div class="max-w-5xl mx-auto px-5">
-      <h2 class="text-center font-bold text-xl text-white sm:text-2xl md:text-3xl mb-8">✨ Art Gallery ✨ </h2>
+      <h2 class="text-center font-bold text-xl text-[#A200FF] sm:text-2xl md:text-3xl mb-8">✨ Art Gallery ✨ </h2>
 
 
       <div class="mb-6" dir="ltr">
-        <article class="rounded-2xl bg-white/40 dark:bg-slate-900/30 overflow-hidden shadow-2xl">
+        <article class="rounded-2xl bg-white/20 dark:bg-slate-900/30 overflow-hidden shadow-2xl">
           <div class="p-4">
             <div class="flex items-center justify-between gap-3">
-              <h3 class="font-semibold text-lg">Science Illustration • Biomimicry</h3>
+              <h3 class="font-semibold text-lg text-[#FFD93D]">Science Illustration • Biomimicry</h3>
               <span class="text-[11px] text-sm px-2 py-1 rounded-full border bg-white/60 dark:bg-slate-900/40
                whitespace-nowrap shrink-0 leading-tight">
                 Client Work
               </span>
             </div>
 
-            <p class="mt-1 text-sm opacity-100">
+            <p class="mt-1 text-sm opacity-100 text-white">
               Selected samples from a biomimicry book illustration project
             </p>
 
@@ -672,7 +693,7 @@
 
 
   <!-- Footer -->
-  <footer class="relative mt-16">
+  <footer class="relative mt-4">
     <!-- gradient-->
     <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#B10CBF_0%,#D86AFF_45%,#BFD2FF_100%)]"></div>
     <!-- shadow above-->

@@ -4,13 +4,14 @@ html, body { max-width: 100vw; overflow-x: hidden; }
 img, video, canvas, svg { max-width: 100%; height: auto; display: block; }
 section[id]{ scroll-margin-top: 96px; }
 
-
 .pixel { font-family: "Press Start 2P", cursive; letter-spacing: .02em; }
 pre, code, kbd, samp, .code {
   font-family: "JetBrains Mono","Noto Sans Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
   font-variant-ligatures: contextual common-ligatures;
   direction: ltr;
 }
+
+
 
 
 .radial-mask { mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%); }
@@ -31,3 +32,12 @@ pre, code, kbd, samp, .code {
 
 .pixel { color:#ffc927; } 
 .dark .pixel { color:#FBBF24; }
+
+[data-parallax-speed] {
+  will-change: transform;
+  transform: translate3d(0,0,0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-parallax-speed] { transform: none !important; }
+}
