@@ -51,7 +51,7 @@
 <!-- Header -->
 
 <body class="font-mono min-h-screen bg-[#2C0C42] text-slate-900 dark:text-slate-100 relative">
-
+  <div class="stars"></div>
   <!-- blobs background -->
   <div class="absolute inset-x-0 top-0 h-screen -z-10 pointer-events-none" data-parallax-speed="0.5">
     <div
@@ -86,12 +86,15 @@
         </nav>
 
         <!-- hamburger button-->
-        <button id="menuBtn" class="md:hidden p-3 hamburger" aria-expanded="false" aria-controls="mobileMenu">
-          <span class="sr-only">menu</span>
-          <span></span>
-          <span></span>
-          <span></span>
+        <button id="menuBtn"
+          class="relative z-50 flex flex-col justify-between w-8 h-6 hamburger text-white block md:hidden"
+          aria-expanded="false" aria-controls="mobileMenu">
+          <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
+          <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
+          <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
         </button>
+
+
       </div>
 
       <!-- mobile navigation-->
@@ -112,20 +115,23 @@
   </header>
 
   <!-- spacer -->
-  <div class="h-10 sm:h-12"></div>
+  <div class="h-8 sm:h-10"></div>
 
 
   <!-- HERO -->
-  <section id="about" class="relative overflow-hidden" data-parallax-speed="1.6">
+  <section id="about" class="relative overflow-hidden" data-parallax-speed="1.7">
     <div class="max-w-6xl mx-auto px-4 py-10 sm:py-12 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
-
       <div class="order-2 md:order-1">
-        <div class="flex items-center gap-5 mt-14">
-          <h1 class="relative z-10 text-[#FFD93D] text-3xl sm:text-5xl font-bold leading-tight">
+        <div class="relative inline-block mt-14">
+          <h1 class="relative z-10 text-[#fab553] text-3xl sm:text-5xl font-bold leading-tight">
             About Me
           </h1>
-          <img src="assets/cat.png" alt="Cat" class="w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 select-none animate-float z-0"
-            draggable="false" />
+
+          <div
+            class="absolute top-1/2 left-full ml-4 w-16 h-17 sm:w-20 sm:h-21 md:w-22 md:h-23 lg:w-26 lg:h-27 -translate-y-1/2 pointer-events-none -z-10 animate-float -mt-10">
+            <img src="assets/cat.png" alt="Cat" class="w-full h-full object-contain opacity-90 select-none"
+              draggable="false" />
+          </div>
           <style>
             @keyframes float {
               0% {
@@ -144,19 +150,18 @@
             .animate-float {
               animation: float 4s ease-in-out infinite;
             }
-            
           </style>
-
         </div>
 
-        <p class="mt-2 leading-7 sm:leading-8 md:max-w-[80ch] lg:max-w-[95ch] whitespace-pre-line text-white">
+        <p
+          class="relative z-10 mt-2 leading-7 sm:leading-8 md:max-w-[85ch] lg:max-w-[95ch] whitespace-pre-line text-white">
           I'm a third-year Computer Science student who loves turning ideas into reality.
           With an analytical mindset and a creative spirit, I enjoy building meaningful software that combines logic
           with imagination.
           Currently volunteering as a game developer on an educational project for diabetic patients,
           using gamification to promote health awareness.
         </p>
-        <p class="mt-6 font-bold text-[#A200FF]">
+        <p class="mt-6 font-bold text-[#21edda]">
           LANGUAGES: Hebrew, English, Russian
         </p>
         <div class="mt-16 flex items-center gap-8">
@@ -183,7 +188,7 @@
           <img src="assets/WhatsApp Image 2025-09-02 at 20.29.58.jpeg" alt="Liza Chepurko"
             class="w-full h-full object-cover">
         </div>
-        <h2 id="typing" dir="ltr" class="text-white py-4 sm:py-6 text-xl sm:text-2xl font-bold text-center"></h2>
+        <h2 id="typing" dir="ltr" class="text-[#CFFF04] py-4 sm:py-6 text-xl sm:text-2xl font-bold text-center"></h2>
 
         <script>
           const texts = [
@@ -228,7 +233,7 @@
   </section>
 
   <!-- Education -->
-  <section id="education" class="py-24" data-parallax-speed="1.2">
+  <section id="education" class="py-24" data-parallax-speed="1.4">
     <div class="pointer-events-none absolute inset-0 -z-10" data-parallax-speed="0.65">
       <div
         class="absolute bottom-[-4rem] top-1/ left-1/4 w-[14rem] h-[14rem] rounded-full bg-[#FFA600]/40 blur-[90px] animate-[floaty_24s_ease-in-out_infinite_alternate]">
@@ -239,7 +244,7 @@
 
       <dl class="mt-8 grid grid-cols-[130px_1fr] md:grid-cols-[160px_1fr] gap-x-8 gap-y-8">
 
-        <dt class="text-[#FFA600] font-semibold text-lg md:text-xl">2015–2018</dt>
+        <dt class="text-[#fab553] font-semibold text-lg md:text-xl">2015–2018</dt>
         <dd class="text-slate-900 dark:text-slate-300 leading-relaxed text-white">
           <p class="font-medium">“Yitzhak Shamir” High School. Graduated with excellence.</p>
           <p class="font-medium">
@@ -248,7 +253,7 @@
           </p>
         </dd>
 
-        <dt class="text-[#FFA600] font-semibold text-lg md:text-xl">2022–2025</dt>
+        <dt class="text-[#fab553] font-semibold text-lg md:text-xl">2022–2025</dt>
         <dd class="text-slate-900 dark:text-slate-300 leading-relaxed text-white">
           <p class="font-medium">Third year B.Sc student of Computer Science,</p>
           <p class="font-medium">Ariel University</p>
@@ -258,7 +263,7 @@
   </section>
 
   <!-- Key Courses -->
-  <section id="courses" class="py-16" data-parallax-speed="1.2">
+  <section id="courses" class="py-16" data-parallax-speed="1.4">
     <div class="max-w-5xl mx-auto px-4">
       <h2 class="text-3xl text-[#A200FF] font-bold text-center">Key Courses</h2>
 
@@ -319,7 +324,7 @@
   </section>
 
   <!-- Programming Skills and Tools -->
-  <section id="skills-tools" class="relative overflow-hidden py-16" dir="ltr" data-parallax-speed="1.2">
+  <section id="skills-tools" class="relative overflow-hidden py-16" dir="ltr" data-parallax-speed="1.4">
 
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-2xl text-[#A200FF] sm:text-3xl md:text-4xl font-extrabold tracking-wider uppercase">
@@ -334,7 +339,7 @@
   </section>
 
   <!-- Chosen Projects -->
-  <section id="projects" class="py-16" dir="ltr" data-parallax-speed="1.2">
+  <section id="projects" class="py-16" dir="ltr" data-parallax-speed="1.4">
     <div class="pointer-events-none absolute inset-0 -z-10" data-parallax-speed="0.65">
       <div
         class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-[#A200FF]/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
@@ -455,7 +460,7 @@
         </article>
   </section>
 
-  <section id="projects" class="py-16" dir="ltr" data-parallax-speed="1.2">
+  <section id="projects" class="py-16" dir="ltr" data-parallax-speed="1.4">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl text-[#A200FF] font-bold text-center">✨ My App ✨</h2>
       <section class="py-8"></section>
@@ -485,7 +490,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <!-- Game Development -->
-  <section id="gamedev" class="py-16" dir="ltr" data-parallax-speed="1.2">
+  <section id="gamedev" class="py-16" dir="ltr" data-parallax-speed="1.4">
     <div class="pointer-events-none absolute inset-0 -z-10" data-parallax-speed="0.65">
       <div
         class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-[#A200FF]/50 blur-[100px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
@@ -580,7 +585,7 @@
   </section>
 
   <!-- Arts -->
-  <section id="arts" class="relative py-8" dir="ltr" data-parallax-speed="1.2">
+  <section id="arts" class="relative py-8" dir="ltr" data-parallax-speed="1.4">
 
     <div class="max-w-5xl mx-auto px-5">
       <h2 class="text-center font-bold text-xl text-[#A200FF] sm:text-2xl md:text-3xl mb-8">✨ Art Gallery ✨ </h2>
