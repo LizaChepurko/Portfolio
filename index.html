@@ -51,7 +51,8 @@
 <!-- Header -->
 
 <body class="font-mono min-h-screen bg-[#2C0C42] text-slate-900 dark:text-slate-100 relative">
-  <div class="stars"></div>
+  <div class="stars" data-parallax-speed="0.6"></div>
+
   <!-- blobs background -->
   <div class="absolute inset-x-0 top-0 h-screen -z-10 pointer-events-none" data-parallax-speed="0.5">
     <div
@@ -120,7 +121,7 @@
 
 
   <!-- HERO -->
-  <section id="about" class="relative overflow-hidden" data-parallax-speed="1.7">
+  <section id="about" class="relative overflow-hidden" data-parallax-speed="1.5">
     <div class="max-w-6xl mx-auto px-4 py-10 sm:py-12 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
       <div class="order-2 md:order-1">
         <div class="relative inline-block mt-14">
@@ -234,7 +235,7 @@
   </section>
 
   <!-- Education -->
-  <section id="education" class="py-24" data-parallax-speed="1.4">
+  <section id="education" class="py-24">
     <div class="pointer-events-none absolute inset-0 -z-10">
       <div
         class="absolute bottom-[-4rem] top-1/ left-1/4 w-[14rem] h-[14rem] rounded-full bg-[#FFA600]/40 blur-[90px] animate-[floaty_24s_ease-in-out_infinite_alternate]">
@@ -264,7 +265,7 @@
   </section>
 
   <!-- Key Courses -->
-  <section id="courses" class="py-16" data-parallax-speed="1.4">
+  <section id="courses" class="py-16">
     <div class="max-w-5xl mx-auto px-4">
       <h2 class="text-3xl text-[#A200FF] font-bold text-center">Key Courses</h2>
 
@@ -325,7 +326,7 @@
   </section>
 
   <!-- Programming Skills and Tools -->
-  <section id="skills-tools" class="relative overflow-hidden py-16" dir="ltr" data-parallax-speed="1.4">
+  <section id="skills-tools" class="relative overflow-hidden py-16" dir="ltr">
 
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-2xl text-[#A200FF] sm:text-3xl md:text-4xl font-extrabold tracking-wider uppercase">
@@ -340,14 +341,14 @@
   </section>
 
   <!-- Chosen Projects -->
-  <section id="projects" class="py-16" dir="ltr" data-parallax-speed="1.4">
+  <section class="py-16" dir="ltr">
     <div class="pointer-events-none absolute inset-0 -z-10">
       <div
         class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-[#A200FF]/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
       </div>
     </div>
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl text-[#A200FF] font-bold text-center">Projects</h2>
+      <h2 id="projects" class="text-3xl text-[#A200FF] font-bold text-center">Projects</h2>
       <section class="py-3"></section>
       <ul class="mt-8 sm:mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
         <!-- 1) OOP – Chess game -->
@@ -461,7 +462,7 @@
         </article>
   </section>
 
-  <section id="projects" class="py-16" dir="ltr" data-parallax-speed="1.4">
+  <section class="py-8" dir="ltr">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl text-[#A200FF] font-bold text-center">✨ My App ✨</h2>
       <section class="py-8"></section>
@@ -491,7 +492,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <!-- Game Development -->
-  <section id="gamedev" class="py-16" dir="ltr" data-parallax-speed="1.4">
+  <section class="py-24" dir="ltr">
     <div class="pointer-events-none absolute inset-0 -z-10">
       <div
         class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-[#A200FF]/50 blur-[100px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
@@ -504,7 +505,7 @@
     <div class="max-w-5xl mx-auto px-4">
 
       <div class="mb-8 flex items-center justify-center gap-2">
-        <h2 class="pixel text-center text-lg sm:text-2xl md:text-3xl tracking-wide whitespace-nowrap">
+        <h2 id="gamedev" class="pixel text-center text-lg sm:text-2xl md:text-3xl tracking-wide whitespace-nowrap">
           Game Development
         </h2>
         <img id="CandyAnim" src="assets/candy_sprite-1.png" alt=""
@@ -586,10 +587,10 @@
   </section>
 
   <!-- Arts -->
-  <section id="arts" class="relative py-8" dir="ltr" data-parallax-speed="1.4">
+  <section class="relative py-24" dir="ltr">
 
     <div class="max-w-5xl mx-auto px-5">
-      <h2 class="text-center font-bold text-xl text-[#A200FF] sm:text-2xl md:text-3xl mb-8">✨ Art Gallery ✨ </h2>
+      <h2 id="arts" class="text-center font-bold text-xl text-[#A200FF] sm:text-2xl md:text-3xl mb-8">✨ Art Gallery ✨ </h2>
 
 
       <div class="mb-6" dir="ltr">
