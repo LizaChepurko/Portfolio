@@ -99,15 +99,16 @@
 
       <!-- mobile navigation-->
       <div id="mobileMenu"
-        class="md:hidden mobile-menu bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-b-xl mt-1 border border-white/20 border-t-0">
+        class="md:hidden mobile-menu absolute top-full inset-x-0 z-40
+            bg-[#2C0C42]/30 dark:bg-slate-900/40 backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)] border border-white/20 border-t-0 rounded-b-xl">
         <nav class="px-4 py-2">
-          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+          <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
             href="#about">about</a>
-          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+          <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
             href="#projects">projects</a>
-          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+          <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
             href="#gamedev">game dev</a>
-          <a class="block py-3 text-center border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+          <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
             href="#arts">arts</a>
         </nav>
       </div>
@@ -234,7 +235,7 @@
 
   <!-- Education -->
   <section id="education" class="py-24" data-parallax-speed="1.4">
-    <div class="pointer-events-none absolute inset-0 -z-10" data-parallax-speed="0.65">
+    <div class="pointer-events-none absolute inset-0 -z-10">
       <div
         class="absolute bottom-[-4rem] top-1/ left-1/4 w-[14rem] h-[14rem] rounded-full bg-[#FFA600]/40 blur-[90px] animate-[floaty_24s_ease-in-out_infinite_alternate]">
       </div>
@@ -340,7 +341,7 @@
 
   <!-- Chosen Projects -->
   <section id="projects" class="py-16" dir="ltr" data-parallax-speed="1.4">
-    <div class="pointer-events-none absolute inset-0 -z-10" data-parallax-speed="0.65">
+    <div class="pointer-events-none absolute inset-0 -z-10">
       <div
         class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-[#A200FF]/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
       </div>
@@ -491,7 +492,7 @@
 
   <!-- Game Development -->
   <section id="gamedev" class="py-16" dir="ltr" data-parallax-speed="1.4">
-    <div class="pointer-events-none absolute inset-0 -z-10" data-parallax-speed="0.65">
+    <div class="pointer-events-none absolute inset-0 -z-10">
       <div
         class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-[#A200FF]/50 blur-[100px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
       </div>
