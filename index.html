@@ -30,6 +30,7 @@
   <script src="candy-anim.js" defer></script>
   <script src="type.js" defer></script>
   <script src="menu.js" defer></script>
+  <script src="requestAnimationFrame.js" defer></script>
   <script>
     // Tailwind config: map font-mono to our fonts
     tailwind.config = {
@@ -45,15 +46,15 @@
     }
   </script>
   <script src="parallax.js" defer></script>
-  <div class="stars" data-parallax-speed="0.5"></div>
 
 </head>
 <!-- Header -->
 
 <body class="font-mono min-h-screen bg-[#2C0C42] text-slate-900 dark:text-slate-100 relative">
 
+   <div class="stars"></div>
   <!-- blobs background -->
-  <div class="absolute inset-x-0 top-0 h-screen -z-30 pointer-events-none" data-parallax-speed="0.5">
+  <div class="absolute inset-x-0 top-0 h-screen -z-50 pointer-events-none">
     <div
       class="absolute -top-30 -left-24 w-[24rem] h-[24rem] rounded-full bg-[#A200FF]/50 blur-[90px] animate-[floaty_22s_ease-in-out_infinite_alternate]">
     </div>
@@ -120,7 +121,7 @@
 
 
   <!-- HERO -->
-  <section id="about" class="relative overflow-hidden" data-parallax-speed="1.5">
+  <section id="about" class="relative overflow-hidden" data-parallax-speed="1.5" >
     <div class="max-w-6xl mx-auto px-4 py-10 sm:py-12 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
       <div class="order-2 md:order-1">
         <div class="relative inline-block mt-14">
@@ -235,7 +236,6 @@
           typeLoop();
         </script>
       </div>
-    </div>
     </div>
   </section>
 
