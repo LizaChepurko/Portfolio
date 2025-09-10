@@ -52,7 +52,7 @@
 
 <body class="font-mono min-h-screen bg-[#2C0C42] text-slate-900 dark:text-slate-100 relative">
 
-   <div class="stars"></div>
+  <div class="stars"></div>
   <!-- blobs background -->
   <div class="absolute inset-x-0 top-0 h-screen -z-50 pointer-events-none">
     <div
@@ -64,65 +64,65 @@
   </div>
 
   <!-- Header mobile-->
-<!-- Header mobile-->
-<header id="siteHeader" class="fixed top-0 inset-x-0 z-50" dir="ltr">
-  <!-- שינוי ראשון: לא להשתמש בmax-w-6xl אלא בpadding מותאם -->
-  <div class="w-full px-2 sm:px-3 lg:px-4">
-    <div class="mt-2 sm:mt-1 h-12 sm:h-14 flex items-center justify-between
+
+  <header id="siteHeader" class="fixed top-0 inset-x-0 z-50" dir="ltr">
+
+    <div class="w-full px-2 sm:px-3 lg:px-4">
+      <div class="mt-2 sm:mt-1 h-12 sm:h-14 flex items-center justify-between
                 rounded-xl sm:rounded-xl mx-1 sm:mx-2
                 border border-white/30 shadow-xl
                 bg-white/10 dark:bg-slate-900/40
                 backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)]">
 
-      <a href="#about" class="px-2 sm:px-3 lg:px-4 font-semibold text-sm sm:text-base truncate text-white min-w-0 flex-shrink">
-        Liza Chepurko
-      </a>
+        <a href="#about" class="font-semibold text-sm sm:text-base text-white" style="max-width: calc(100vw - 120px);">
+          <span class="truncate block">Liza Chepurko</span>
+        </a>
 
-      <!--desktop navigation-->
-      <nav class="hidden md:block">
-        <ul class="flex items-center gap-4 lg:gap-6 px-3 text-sm lg:text-base text-white">
-          <li><a class="hover:underline transition-all" href="#about">about</a></li>
-          <li><a class="hover:underline transition-all" href="#projects">projects</a></li>
-          <li><a class="hover:underline transition-all" href="#gamedev">game dev</a></li>
-          <li><a class="hover:underline transition-all" href="#arts">arts</a></li>
-        </ul>
-      </nav>
+        <!--desktop navigation-->
+        <nav class="hidden md:block">
+          <ul class="flex items-center gap-4 lg:gap-6 px-3 text-sm lg:text-base text-white">
+            <li><a class="hover:underline transition-all" href="#about">about</a></li>
+            <li><a class="hover:underline transition-all" href="#projects">projects</a></li>
+            <li><a class="hover:underline transition-all" href="#gamedev">game dev</a></li>
+            <li><a class="hover:underline transition-all" href="#arts">arts</a></li>
+          </ul>
+        </nav>
 
-      <!-- hamburger button - עם margin מוקטן -->
-      <button id="menuBtn"
-        class="relative z-50 flex flex-col justify-between w-7 h-5 hamburger text-white block md:hidden px-2 flex-shrink-0"
-        aria-expanded="false" aria-controls="mobileMenu">
-        <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
-        <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
-        <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
-      </button>
+        <!-- hamburger button - עם margin מוקטן -->
+        <button id="menuBtn"
+          class="relative z-50 flex flex-col justify-between w-7 h-5 hamburger text-white block md:hidden px-2 flex-shrink-0"
+          aria-expanded="false" aria-controls="mobileMenu">
+          <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
+          <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
+          <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
+        </button>
 
-    </div>
+      </div>
 
-    <!-- mobile navigation - עם positioning מותאם -->
-    <div id="mobileMenu"
-      class="md:hidden mobile-menu absolute top-full left-2 right-2 z-40 mx-1 sm:mx-2
+      <!-- mobile navigation - עם positioning מותאם -->
+      <div id="mobileMenu"
+        class="md:hidden mobile-menu absolute top-full left-2 right-2 z-40 mx-1 sm:mx-2
           bg-[#2C0C42]/30 dark:bg-slate-900/40 backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)] border border-white/20 border-t-0 rounded-b-xl">
-      <nav class="px-4 py-2">
-        <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
-          href="#about">about</a>
-        <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
-          href="#projects">projects</a>
-        <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
-          href="#gamedev">game dev</a>
-        <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
-          href="#arts">arts</a>
-      </nav>
+        <nav class="px-4 py-2">
+          <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#about">about</a>
+          <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#projects">projects</a>
+          <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#gamedev">game dev</a>
+          <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#arts">arts</a>
+        </nav>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <!-- spacer -->
   <div class="h-8 sm:h-10"></div>
 
 
   <!-- HERO -->
-  <section id="about" class="relative overflow-hidden" data-parallax-speed="1.5" >
+  <section id="about" class="relative overflow-hidden" data-parallax-speed="1.5">
     <div class="max-w-6xl mx-auto px-4 py-10 sm:py-12 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
       <div class="order-2 md:order-1">
         <div class="relative inline-block mt-14">
