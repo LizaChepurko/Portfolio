@@ -52,7 +52,7 @@
 
 <body class="font-mono min-h-screen bg-[#2C0C42] text-slate-900 dark:text-slate-100 relative">
 
-   <div class="stars"></div>
+  <div class="stars"></div>
   <!-- blobs background -->
   <div class="absolute inset-x-0 top-0 h-screen -z-50 pointer-events-none">
     <div
@@ -65,65 +65,66 @@
 
   <!-- Header mobile-->
 
-<header id="siteHeader" class="fixed top-0 inset-x-0 z-50" dir="ltr">
-  
-  <div class="w-full px-2 sm:px-3 lg:px-4">
-    <div class="mt-2 sm:mt-1 h-12 sm:h-14 flex items-center justify-between
+  <header id="siteHeader" class="fixed top-0 inset-x-0 z-50" dir="ltr">
+
+    <div class="w-full px-2 sm:px-3 lg:px-4">
+      <div class="mt-2 sm:mt-1 h-12 sm:h-14 flex items-center justify-between
                 rounded-xl sm:rounded-xl mx-1 sm:mx-2
                 border border-white/30 shadow-xl
                 bg-white/10 dark:bg-slate-900/40
                 backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)]">
 
-      <a href="#about" class="px-2 sm:px-3 lg:px-4 font-semibold text-sm sm:text-base truncate text-white min-w-0 flex-shrink">
-        Liza Chepurko
-      </a>
+        <a href="#about"
+          class="px-2 sm:px-3 lg:px-4 font-semibold text-sm sm:text-base truncate text-white min-w-0 flex-shrink">
+          Liza Chepurko
+        </a>
 
-      <!--desktop navigation-->
-      <nav class="hidden md:block">
-        <ul class="flex items-center gap-4 lg:gap-6 px-3 text-sm lg:text-base text-white">
-          <li><a class="hover:underline transition-all" href="#about">about</a></li>
-          <li><a class="hover:underline transition-all" href="#projects">projects</a></li>
-          <li><a class="hover:underline transition-all" href="#gamedev">game dev</a></li>
-          <li><a class="hover:underline transition-all" href="#arts">arts</a></li>
-        </ul>
-      </nav>
+        <!--desktop navigation-->
+        <nav class="hidden md:block">
+          <ul class="flex items-center gap-4 lg:gap-6 px-3 text-sm lg:text-base text-white">
+            <li><a class="hover:underline transition-all" href="#about">about</a></li>
+            <li><a class="hover:underline transition-all" href="#projects">projects</a></li>
+            <li><a class="hover:underline transition-all" href="#gamedev">game dev</a></li>
+            <li><a class="hover:underline transition-all" href="#arts">arts</a></li>
+          </ul>
+        </nav>
 
-      <!-- hamburger button - עם margin מוקטן -->
-      <button id="menuBtn"
-        class="relative z-50 flex flex-col justify-between w-7 h-5 hamburger text-white block md:hidden px-2 flex-shrink-0"
-        aria-expanded="false" aria-controls="mobileMenu">
-        <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
-        <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
-        <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
-      </button>
+        <!-- hamburger button - עם margin מוקטן -->
+        <button id="menuBtn"
+          class="relative z-50 flex flex-col justify-between w-7 h-5 hamburger text-white block md:hidden px-2 flex-shrink-0"
+          aria-expanded="false" aria-controls="mobileMenu">
+          <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
+          <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
+          <span class="block h-[2px] w-full bg-current rounded transition-all duration-300"></span>
+        </button>
 
-    </div>
+      </div>
 
-    <!-- mobile navigation - עם positioning מותאם -->
-    <div id="mobileMenu"
-      class="md:hidden mobile-menu absolute top-full left-2 right-2 z-40 mx-1 sm:mx-2
+      <!-- mobile navigation - עם positioning מותאם -->
+      <div id="mobileMenu"
+        class="md:hidden mobile-menu absolute top-full left-2 right-2 z-40 mx-1 sm:mx-2
           bg-[#2C0C42]/30 dark:bg-slate-900/40 backdrop-blur [backdrop-filter:blur(10px)] [-webkit-backdrop-filter:blur(10px)] border border-white/20 border-t-0 rounded-b-xl">
-      <nav class="px-4 py-2">
-        <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
-          href="#about">about</a>
-        <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
-          href="#projects">projects</a>
-        <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
-          href="#gamedev">game dev</a>
-        <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
-          href="#arts">arts</a>
-      </nav>
+        <nav class="px-4 py-2">
+          <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#about">about</a>
+          <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#projects">projects</a>
+          <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#gamedev">game dev</a>
+          <a class="block py-3 text-center text-white border-b border-slate-200/30 dark:border-slate-700/30 last:border-b-0 hover:bg-white/20 transition-colors rounded"
+            href="#arts">arts</a>
+        </nav>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <!-- spacer -->
-  <div class="h-8 sm:h-10"></div>
+  <div class="h-6 sm:h-6"></div>
 
 
   <!-- HERO -->
-  <section id="about" class="relative overflow-hidden" data-parallax-speed="1.5" >
-    <div class="max-w-6xl mx-auto px-4 py-10 sm:py-12 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
+  <section id="about" class="relative overflow-hidden" data-parallax-speed="1.7">
+    <div class="max-w-6xl mx-auto px-4 py-8 sm:py-10 grid md:grid-cols-2 gap-10 items-center" dir="ltr">
       <div class="order-2 md:order-1">
         <div class="relative inline-block mt-14">
           <h1 class="relative z-10 mt-10 text-[#fab553] text-3xl sm:text-5xl font-bold leading-tight">
@@ -186,7 +187,7 @@
             <span class="text-s text-[#00CAFF]">lizachep@gmail.com</span>
           </a>
         </div>
-        <blockquote class="mt-10 pl-5 border-l-4 border-[#A200FF] text-white/90 text-sm sm:text-sm font-serif italic">
+        <blockquote class="mt-10 pl-5 border-l-4 border-[#A200FF] text-white/90 text-lg sm:text-lg font-serif italic">
           “Logic will get you from A to B. Imagination will take you everywhere.”
           <footer class="mt-2 text-white/60 text-sm not-italic">- Albert Einstein</footer>
         </blockquote>
@@ -241,7 +242,7 @@
   </section>
 
   <!-- Education -->
-  <section id="education" class="py-24">
+  <section id="education" class="py-12">
     <div class="pointer-events-none absolute inset-0 -z-30">
       <div
         class="absolute bottom-[-4rem] top-1/ left-1/4 w-[14rem] h-[14rem] rounded-full bg-[#FFA600]/40 blur-[90px] animate-[floaty_24s_ease-in-out_infinite_alternate]">
@@ -296,13 +297,13 @@
           <li><span
               class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Algorithms</span>
           </li>
+          <li><span
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Operating
+              systems</span></li>
         </ul>
 
         <!--line 2-->
         <ul class="flex flex-wrap justify-center gap-3 sm:gap-4">
-          <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Operating
-              systems</span></li>
           <li><span
               class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Game
               Development</span></li>
@@ -312,6 +313,9 @@
           <li><span
               class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Topics
               in Computer Vision</span></li>
+          <li><span
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Probability
+              for CS</span></li>
         </ul>
 
         <!--line 3-->
@@ -320,11 +324,14 @@
               class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Computer
               Architecture</span></li>
           <li><span
-              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">++C</span>
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">C++</span>
           </li>
           <li><span
               class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Data
               compression</span></li>
+          <li><span
+              class="inline-block rounded-full border border-[#FFD93D] dark:border-slate-500/60 px-5 py-2 text-sm font-medium backdrop-blur shadow-sm hover:-translate-y-1 transition text-white">Discrete
+              mathematics</span></li>
         </ul>
       </div>
     </div>
@@ -340,7 +347,7 @@
 
       <p class="mt-10 md:mt-20 text-lg leading-8 text-center text-white">
         Java, Python, Linux (Ubuntu OS), Git, PyTorch, Wireshark, C, C#, C++, SQL &amp; MongoDB, Firebase,
-        Unity, ChatGPT and Android Studio
+        Unity, Android Studio, Flutter, Figma and ChatGPT
       </p>
     </div>
   </section>
@@ -492,7 +499,7 @@
     </div>
   </section>
 
-
+<section class="py-10" dir="ltr">
   <div class="max-w-6xl mx-auto px-4">
 
     <div class="mb-8 flex items-center justify-center gap-2">
@@ -500,7 +507,7 @@
         Game Development
       </h2>
       <img id="CandyAnim" src="assets/candy_sprite-1.png" alt=""
-        class="shrink-0 w-7 h-7 sm:w-9 sm:h-9 md:w-12 md:h-12 motion-safe:animate-bounce" draggable="false" />
+        class="shrink-0 w-7 h-7 sm:w-9 sm:h-9 md:w-14 md:h-14 motion-safe:animate-bounce" draggable="false" />
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center items-start">
@@ -595,7 +602,7 @@
 
     </div>
   </div>
-
+</section>
 
   <!-- Arts -->
   <section class="relative py-24" dir="ltr">
