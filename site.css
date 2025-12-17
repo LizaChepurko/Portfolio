@@ -1,9 +1,14 @@
 
-html, body {
-  width: 100%;
-  max-width: 100%;
+html {
   overflow-x: hidden;
+  overflow-y: auto;
 }
+
+body {
+  min-height: 100%;
+  overflow: visible;
+}
+
 footer {
     position: sticky;
     top: 100vh;
