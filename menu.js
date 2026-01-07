@@ -1,62 +1,25 @@
-
-document.addEventListener('DOMContentLoaded', () => {
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const html = document.documentElement, body = document.body;
-
-    function openMenu() {
-        mobileMenu.classList.add('open');
-        menuBtn.classList.add('active');
-        menuBtn.setAttribute('aria-expanded', 'true');
-        html.classList.add('overflow-hidden');
-        body.classList.add('overflow-hidden');
-    }
-    function closeMenu() {
-        mobileMenu.classList.remove('open');
-        menuBtn.classList.remove('active');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        html.classList.remove('overflow-hidden');
-        body.classList.remove('overflow-hidden');
-    }
-    function toggleMenu() {
-        mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
-    }
+// Mobile Menu Logic
+const btn = document.getElementById('mobile-menu-button');
+const menu = document.getElementById('mobile-menu');
+const links = document.querySelectorAll('.mobile-link');
 
 
-    menuBtn?.addEventListener('click', toggleMenu);
-    menuBtn?.addEventListener('touchend', (e) => { e.preventDefault(); toggleMenu(); }, { passive: false });
-
-    mobileMenu.addEventListener('click', (e) => {
-        const a = e.target.closest('a');
-        if (a) closeMenu();
+if(btn && menu) {
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        
+        const icon = btn.querySelector('.material-symbols-outlined');
+        if (menu.classList.contains('hidden')) {
+            icon.textContent = 'menu';
+        } else {
+            icon.textContent = 'close';
+        }
     });
 
-    document.addEventListener('click', (e) => {
-        if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            btn.querySelector('.material-symbols-outlined').textContent = 'menu';
+        });
     });
-
-
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-
-    const mql = window.matchMedia('(min-width: 768px)');
-    (mql.addEventListener || mql.addListener).call(mql, 'change' in mql ? 'change' : (cb => mql.addListener(cb)), (e) => {
-        if (e.matches) closeMenu();
-    });
-    
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  new Typed('#typed', {
-    strings: [
-      "Logic meets imagination ✨",
-      "From pixels to projects 🚀",
-      "Welcome to my portfolio!"
-    ],
-    typeSpeed: 40,
-    backSpeed: 25,
-    loop: true
-  });
-});
-
-
-
+}
