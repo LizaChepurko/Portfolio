@@ -96,18 +96,20 @@
   <div class="scanlines"></div>
   <div class="stars"></div>
   <div class="fixed inset-0 bg-grid-pattern bg-grid opacity-20 pointer-events-none z-0"></div>
-  <nav class="fixed top-0 z-50 w-full backdrop-blur-md bg-background-dark/80 border-b border-primary/30">
+  <nav class="fixed top-0 z-50 w-full backdrop-blur-md bg-background-dark/50 border-b border-primary/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
 
         <div class="flex items-center gap-3 group">
-          <div
-            class="size-10 flex items-center justify-center bg-primary/20 text-secondary border-2 border-primary group-hover:bg-primary/40 transition-colors">
-            <span class="material-symbols-outlined">terminal</span>
-          </div>
-          <span class="text-lg font-pixel text-white tracking-widest uppercase">
-            <span class="text-primary">Liza</span>Dev
-          </span>
+          <a href="#hero" class="flex items-center gap-3 group cursor-pointer">
+            <div
+              class="size-10 flex items-center justify-center bg-primary/20 text-secondary border-2 border-primary group-hover:bg-primary/60 transition-colors">
+              <span class="material-symbols-outlined">terminal</span>
+            </div>
+            <span class="text-lg font-pixel text-white tracking-widest uppercase">
+              <span class="text-primary">Liza</span>Dev
+            </span>
+          </a>
         </div>
 
         <div class="hidden md:flex items-center gap-8">
@@ -160,7 +162,7 @@
     </div>
   </nav>
   <main class="pt-8 flex flex-col items-center w-full relative z-10">
-    <section
+    <section id="hero"
       class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32 flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
       <div class="flex-1 reveal-left flex flex-col gap-6 items-start text-left">
         <div
@@ -173,8 +175,9 @@
         </div>
         <h1 class="font-pixel text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight break-words">
           <span
-            class="font-pixel text-transparent bg-clip-text bg-gradient-to-r from-secondary via-white to-primary drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">Liza
-            Chepurko</span>
+            class="relative inline-block font-pixel text-transparent bg-clip-text bg-gradient-to-r from-secondary via-white to-primary animate-pulse opacity-100 drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">
+            Liza Chepurko
+          </span>
         </h1>
 
         <p class="desc text-lg sm:text-xl text-gray-300 max-w-2xl leading-relaxed border-l-2 border-primary pl-4">
@@ -192,23 +195,38 @@
           <span>RUSSIAN</span>
         </div>
 
-        <div class="mt-8 flex items-center gap-8">
-          <a href="https://github.com/LizaChepurko" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center hover:opacity-100 opacity-80 transition" aria-label="GitHub">
-            <img src="assets/6214715_github_logo_icon.svg" alt="GitHub" class="w-7 h-7">
-          </a>
+<div class="mt-8 flex items-center gap-6 sm:gap-8">
+  
+  <a href="https://github.com/LizaChepurko" target="_blank" rel="noopener noreferrer"
+    class="group relative p-2 text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1"
+    aria-label="GitHub">
+    <div class="absolute inset-0 bg-primary/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <svg class="w-8 h-8 fill-current relative z-10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.065 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+    </svg>
+  </a>
 
-          <a href="https://www.linkedin.com/in/liza-chepurko-b69b99302/" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center hover:opacity-100 opacity-80 transition" aria-label="LinkedIn">
-            <img src="assets/6214710_linkedin_logo_icon.svg" alt="LinkedIn" class="w-7 h-7">
-          </a>
+  <a href="https://www.linkedin.com/in/liza-chepurko-b69b99302/" target="_blank" rel="noopener noreferrer"
+    class="group relative p-2 text-gray-400 hover:text-[#0077b5] transition-all duration-300 hover:-translate-y-1"
+    aria-label="LinkedIn">
+    <div class="absolute inset-0 bg-[#0077b5]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <svg class="w-8 h-8 fill-current relative z-10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+  </a>
 
-          <a href="mailto:lizachep@gmail.com"
-            class="inline-flex items-center gap-2 hover:opacity-100 opacity-80 transition" aria-label="Email">
-            <img src="assets/6214722_email_envelope_gmail_letter_logo_icon.svg" alt="" class="w-7 h-7">
-            <span class="text-s text-[#00CAFF]">lizachep@gmail.com</span>
-          </a>
-        </div>
+  <a href="mailto:lizachep@gmail.com"
+    class="group relative flex items-center gap-3 px-4 py-2 rounded border border-gray-700 bg-gray-900/50 text-gray-400 hover:text-secondary hover:border-secondary/50 transition-all duration-300 hover:-translate-y-1"
+    aria-label="Email">
+    <div class="absolute inset-0 bg-secondary/10 rounded blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    
+    <svg class="w-6 h-6 fill-current relative z-10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+    <span class="text-sm font-mono tracking-wide relative z-10 group-hover:text-white transition-colors">lizachep@gmail.com</span>
+  </a>
+
+</div>
         <blockquote
           class="mt-10 pl-5 border-l-4 border-[#A200FF] text-white/80 text-lg sm:text-lg font-serif italic drop-shadow-[0_0_10px_rgba(0,240,255,0.7)] ">
           “Logic will get you from A to B. Imagination will take you everywhere.”
@@ -242,8 +260,8 @@
         </div>
 
         <!-- Typing text -->
-        <h2 id="hero-typing" dir="ltr" class="z-10 text-secondary drop-shadow-[0_0_8px_rgba(0,240,255,0.35)]
-             py-2 sm:py-4 text-lg sm:text-xl font-bold text-center lg:text-right
+        <h2 id="hero-typing" dir="ltr" class="font-pixel text-secondary drop-shadow-[0_0_8px_rgba(0,240,255,0.35)]
+             py-2 sm:py-4 text-xs sm:text-sm font-bold text-center sm:text-right
              min-h-[2.25rem] sm:min-h-[2.75rem]">
         </h2>
       </div>
@@ -252,7 +270,7 @@
     <section class="w-full max-w-4xl px-4 sm:px-6 lg:px-8 py-16" id="about" class="scroll-mt-24">
       <div class="flex reveal-up items-center gap-4 mb-8">
         <span
-          class="material-symbols-outlined text-secondary text-3xl animate-pulse drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">terminal</span>
+          class="material-symbols-outlined text-secondary text-3xl animate-pulse drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">Edit_Note</span>
         <h2 class="text-lg md:text-xl font-pixel text-white uppercase tracking-widest">
           About_Me
         </h2>
@@ -1313,7 +1331,7 @@
                 </h3>
 
                 <span class="inline-flex items-center gap-2 px-3 py-1 text-[10px] font-pixel uppercase tracking-widest
-                       bg-primary/20 text-secondary/20 border border-secondary/20">
+                       bg-primary/30 text-secondary/50 border border-secondary/50">
                   <span class="material-symbols-outlined text-[14px]">work</span>
                   Client Work
                 </span>
@@ -1481,7 +1499,8 @@
         <div
           class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 blur-[100px] rounded-full pointer-events-none">
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-8 relative z-10">
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex reveal-up delay-100 flex-col items-center text-center gap-8 relative z-10">
           <h2 class="text-3xl font-bold text-white">Initialize Communication</h2>
           <p class="desc text-gray-400 max-w-lg">
             I'm currently looking for internships and junior developer roles. Feel free to reach out.
@@ -1580,6 +1599,38 @@
 
       const elementsToAnimate = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale');
       elementsToAnimate.forEach(el => observer.observe(el));
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const starsContainer = document.querySelector('.stars');
+      const starCount = 110;
+
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+
+        const size = Math.random() * 2 + 1;
+
+        const duration = Math.random() * 2 + 2;
+        const delay = Math.random() * 3;
+
+        star.style.left = `${x}%`;
+        star.style.top = `${y}%`;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.setProperty('--duration', `${duration}s`);
+        star.style.animationDelay = `${delay}s`;
+
+        const colors = ['#ffffff', '#9a5ef3', '#f0f8bd'];
+        star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+        starsContainer.appendChild(star);
+      }
     });
   </script>
 
